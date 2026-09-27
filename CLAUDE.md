@@ -1,3 +1,14 @@
+## Project: home-budget (PennyPlan)
+
+Envelope-budgeting web app. Two independent projects, no monorepo tooling:
+- `backend/` — Spring Boot 4 / Java 21 / Maven. Always use the wrapper: `./mvnw test`, `./mvnw spring-boot:run` (run from `backend/`).
+- `frontend/` — Angular 21, standalone components + signals, npm. Tests are Vitest via `npm test` (not Karma/Jasmine). Format with Prettier (`.prettierrc`: single quotes, width 100).
+
+- Local DB: `docker compose -f docker-compose-dev.yml up -d` (Postgres 16, db `budget`, user `home_u`). Backend expects it on `localhost:5432`.
+- Schema is owned by Flyway migrations in `backend/src/main/resources/db/migration` (`ddl-auto: validate`). Never rely on Hibernate to create/alter tables — add a new `V<n>__*.sql` migration.
+- Target deploy: Angular build is bundled into Spring's static resources and shipped as one unit to Fly. Keep API routes under a prefix (e.g. `/api`) so they don't collide with SPA routes.
+- Do not edit anything between the `@przeprogramowani/10x-cli` BEGIN/END markers below — the CLI regenerates it.
+
 <!-- BEGIN @przeprogramowani/10x-cli -->
 
 ## 10xDevs AI Toolkit — Module 1, Lesson 3
