@@ -1,9 +1,20 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/budget
-    username: home_u
-    password: home_p
+    # Defaults target the local docker-compose DB; production (Neon) overrides via env vars.
+    # Neon: use the direct (non "-pooler") endpoint, JDBC form, e.g.
+    # jdbc:postgresql://ep-xxx.eu-central-1.aws.neon.tech/neondb?sslmode=require
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/budget}
+    username: ${SPRING_DATASOURCE_USERNAME:home_u}
+    password: ${SPRING_DATASOURCE_PASSWORD:home_p}
     driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 3
+      # No idle connections held open, so Neon's compute can scale to zero.
+      minimum-idle: 0
+      idle-timeout: 30000
+      max-lifetime: 300000
+      # Headroom for Neon waking a suspended compute.
+      connection-timeout: 15000
   jpa:
     hibernate:
       ddl-auto: validate
@@ -14,3 +25,28 @@ spring:
     enabled: true
     locations: classpath:db/migration
     baseline-on-migrate: true
+  session:
+    # Sessions live in Postgres so they survive cold starts; PRD requires a long session.
+    timeout: 45d
+    jdbc:
+      # Tables are created by Flyway (V1__spring_session.sql), never by Spring Session.
+      initialize-schema: never
+      # Default is every minute, which would keep Neon awake; once a day is enough.
+      cleanup-cron: "0 0 3 * * *"
+
+server:
+  port: ${PORT:8080}
+  # Vercel terminates TLS; trust X-Forwarded-* for scheme/host.
+  forward-headers-strategy: framework
+  servlet:
+    session:
+      cookie:
+        max-age: 45d
+        http-only: true
+        same-site: lax
+
+management:
+  health:
+    # Health checks must not wake the database.
+    db:
+      enabled: false
