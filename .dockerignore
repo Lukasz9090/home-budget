@@ -1,0 +1,10 @@
+.git
+.idea
+.claude
+.agents
+context
+draft.md
+**/node_modules
+**/dist
+**/.angular
+backend/target
