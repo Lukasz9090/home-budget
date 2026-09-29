@@ -86,3 +86,36 @@ Legenda: 🤖 robi agent · 🧑 bramka manualna (logowanie w przeglądarce lub 
 
 ## Weryfikacja końcowa
 Na produkcyjnym URL `*.vercel.app` jest `x-vercel-id` z `fra1`, SPA zwraca 200, `/api` zwraca 401, a health `UP`. Neon `main` ma V1 w `flyway_schema_history` i przechodzi w suspend po bezczynności. Gałąź `preview` jest odizolowana. Push na `master` robi auto-deploy przez Vercel. Workflow backupu przechodzi przy ręcznym uruchomieniu.
+
+---
+
+## Wynik (2026-09-29)
+
+Pierwsze wdrożenie zrobiono ręcznie 2026-09-28, a ten przebieg je zweryfikował i uzupełnił. Część Faz 2–5 była już wykonana, a odchylenia od planu opisuje poniższa lista.
+
+**Stan**
+- **Vercel:** projekt `boski-team/home-budget` (`prj_DMLVqt867RTAJFELiUBXROlsBkSy`). Produkcja: https://home-budget-virid.vercel.app. Git integration jest podpięta (alias `home-budget-git-master-boski-team.vercel.app`) z Production Branch = `master`. Deploy produkcyjny ma ID `home-budget-ltuuzdqx2-boski-team.vercel.app` (2026-09-28 21:43 CEST).
+- **Neon:** projekt `home-budget` (`long-lab-81533799`), `aws-eu-central-1`, **PostgreSQL 18** (plan zakładał 16). Gałęzie:
+  - `production` (`br-still-shape-b13u6wrm`, endpoint `ep-rapid-dream-b1fjyb19`, direct)
+  - `preview` (`br-solitary-cell-b14j9eqv`, endpoint `ep-dawn-glade-b1a6gz5d`, utworzona 2026-09-29, na razie nieużywana)
+- **Flyway:** na `production` jest V1 `spring session`, zastosowana 2026-09-28 19:45 UTC, `success=true`.
+
+**Weryfikacja (2026-09-29)**
+- `X-Vercel-Id: arn1::fra1::…`: funkcja działa we Frankfurcie.
+- `/` → 200, trasa SPA → 200, `/api/x` → 401, `/actuator/health` → 200 `UP`.
+- Cold start pierwszego requestu: **≈11.5 s**, kolejne ≈0.4 s. Lokalny start kontenera trwa ≈21 s na maszynie deweloperskiej.
+- `./mvnw test` i `ng test` przechodzą. Lokalny smoke test obrazu `Dockerfile.vercel` przeszedł.
+- Suspend computu Neon po bezczynności: **nie zweryfikowano z CLI**. Trzeba sprawdzić w konsoli Neon (Monitoring → compute active time) po pierwszym tygodniu.
+
+**Odchylenia i świadome decyzje**
+- **Preview używa produkcyjnej bazy (zaakceptowane przez dewelopera 2026-09-29).** Zmienne `SPRING_DATASOURCE_*` mają zakres Production + Preview. Każdy deploy preview (push dowolnego brancha) łączy się z Neon `production`, więc Flyway na feature branchu migruje produkcję. Mitygacja: migracje tylko addytywne. Przed pushem brancha z nową migracją trzeba zrobić ręczny `pg_dump` albo rozdzielić zakresy: odznaczyć Preview w panelu i dodać zmienne Preview wskazujące na gałąź `preview`.
+- Neon działa na PG18, a lokalny `docker-compose-dev.yml` na PG16. Migracje trzeba pisać w SQL zgodnym z obiema wersjami.
+- Konto Neon pokazuje `Projects Limit 0`. Nowego projektu raczej nie da się utworzyć bez zwolnienia miejsca.
+
+**Dodane w tym przebiegu**
+- `.github/workflows/test.yml`: testy backendu (z Postgres 16 jako service) i frontendu na PR i push do `master`. Nic nie deployuje.
+- `.github/workflows/backup.yml`: nocny `pg_dump` (klient PG18) gałęzi `production`, zapisywany jako artifact z retencją 30 dni. Wymaga sekretu `NEON_BACKUP_URL` (direct `postgresql://…` gałęzi `production`), który ustawia człowiek: `gh secret set NEON_BACKUP_URL`.
+
+**Do zrobienia (człowiek)**
+- `gh auth login` → `gh secret set NEON_BACKUP_URL` → `gh workflow run backup` i sprawdzenie artifactu.
+- W pierwszym miesiącu raz w tygodniu: Vercel Usage → Provisioned Memory (próg 60%) oraz Neon compute hours.

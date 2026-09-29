@@ -1,0 +1,27 @@
+# Nightly logical backup of the Neon production branch (Neon free keeps only a 6 h restore window).
+# Secret NEON_BACKUP_URL: direct (non "-pooler") postgresql:// connection string of the production branch.
+name: backup
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  pg-dump:
+    runs-on: ubuntu-latest
+    # pg_dump must be at least the server's major version (Neon project runs PostgreSQL 18).
+    container: postgres:18-alpine
+    steps:
+      - name: Dump
+        env:
+          NEON_BACKUP_URL: ${{ secrets.NEON_BACKUP_URL }}
+        run: |
+          mkdir -p dump
+          pg_dump "$NEON_BACKUP_URL" --format=custom --no-owner --file "dump/pennyplan-$(date -u +%Y%m%dT%H%MZ).dump"
+          ls -l dump
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pennyplan-db-${{ github.run_id }}
+          path: dump/
+          retention-days: 30
