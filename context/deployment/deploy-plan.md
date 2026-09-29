@@ -97,7 +97,7 @@ Pierwsze wdrożenie zrobiono ręcznie 2026-09-28, a ten przebieg je zweryfikowa�
 - **Vercel:** projekt `boski-team/home-budget` (`prj_DMLVqt867RTAJFELiUBXROlsBkSy`). Produkcja: https://home-budget-virid.vercel.app. Git integration jest podpięta (alias `home-budget-git-master-boski-team.vercel.app`) z Production Branch = `master`. Deploy produkcyjny ma ID `home-budget-ltuuzdqx2-boski-team.vercel.app` (2026-09-28 21:43 CEST).
 - **Neon:** projekt `home-budget` (`long-lab-81533799`), `aws-eu-central-1`, **PostgreSQL 18** (plan zakładał 16). Gałęzie:
   - `production` (`br-still-shape-b13u6wrm`, endpoint `ep-rapid-dream-b1fjyb19`, direct)
-  - `preview` (`br-solitary-cell-b14j9eqv`, endpoint `ep-dawn-glade-b1a6gz5d`, utworzona 2026-09-29, na razie nieużywana)
+  - `preview` (`br-solitary-cell-b14j9eqv`, endpoint `ep-dawn-glade-b1a6gz5d`, utworzona 2026-09-29 jako kopia `production`, używana przez deploye Preview)
 - **Flyway:** na `production` jest V1 `spring session`, zastosowana 2026-09-28 19:45 UTC, `success=true`.
 
 **Weryfikacja (2026-09-29)**
@@ -108,7 +108,7 @@ Pierwsze wdrożenie zrobiono ręcznie 2026-09-28, a ten przebieg je zweryfikowa�
 - Suspend computu Neon po bezczynności: **nie zweryfikowano z CLI**. Trzeba sprawdzić w konsoli Neon (Monitoring → compute active time) po pierwszym tygodniu.
 
 **Odchylenia i świadome decyzje**
-- **Preview używa produkcyjnej bazy (zaakceptowane przez dewelopera 2026-09-29).** Zmienne `SPRING_DATASOURCE_*` mają zakres Production + Preview. Każdy deploy preview (push dowolnego brancha) łączy się z Neon `production`, więc Flyway na feature branchu migruje produkcję. Mitygacja: migracje tylko addytywne. Przed pushem brancha z nową migracją trzeba zrobić ręczny `pg_dump` albo rozdzielić zakresy: odznaczyć Preview w panelu i dodać zmienne Preview wskazujące na gałąź `preview`.
+- **Preview odizolowany od produkcji (2026-09-29).** Pierwotnie zmienne `SPRING_DATASOURCE_*` miały zakres Production + Preview, więc deploy preview migrowałby produkcyjną bazę. Deweloper odznaczył Preview w panelu, a w Preview dodano osobne zmienne (Sensitive) wskazujące na gałąź Neon `preview`. Weryfikacja: deploy preview `home-budget-n6hzx20zo-boski-team.vercel.app` połączył się z `ep-dawn-glade-b1a6gz5d` (log Flyway), start 8.7 s, health `UP`, `/api/x` → 401. Gałąź `preview` resetujesz do stanu produkcji tak: `neonctl branches reset preview --parent --project-id long-lab-81533799`.
 - Neon działa na PG18, a lokalny `docker-compose-dev.yml` na PG16. Migracje trzeba pisać w SQL zgodnym z obiema wersjami.
 - Konto Neon pokazuje `Projects Limit 0`. Nowego projektu raczej nie da się utworzyć bez zwolnienia miejsca.
 
