@@ -1,4 +1,4 @@
-# Pierwsze wdrożenie PennyPlan: Vercel (fra1) + Neon (Frankfurt)
+ # Pierwsze wdrożenie PennyPlan: Vercel (fra1) + Neon (Frankfurt)
 
 ## Kontekst
 
