@@ -353,28 +353,28 @@ Each authenticated request now updates `SPRING_SESSION.LAST_ACCESS_TIME` (alread
 
 #### Automated
 
-- [x] 1.1 Flyway applies `V2__users.sql` and Hibernate validation passes: `./mvnw test` (context loads)
-- [x] 1.2 Auth flow integration tests pass: `./mvnw test -Dtest=AuthFlowTests`
-- [x] 1.3 Session/CSRF cookie tests pass: `./mvnw test -Dtest=SessionCookieTests`
-- [x] 1.4 Existing routing tests still pass (`/api/months` → 401, SPA fallback): `./mvnw test -Dtest=WebRoutingTests`
-- [x] 1.5 Formatting is clean: `./mvnw spotless:check`
+- [x] 1.1 Flyway applies `V2__users.sql` and Hibernate validation passes: `./mvnw test` (context loads) — 9b82105
+- [x] 1.2 Auth flow integration tests pass: `./mvnw test -Dtest=AuthFlowTests` — 9b82105
+- [x] 1.3 Session/CSRF cookie tests pass: `./mvnw test -Dtest=SessionCookieTests` — 9b82105
+- [x] 1.4 Existing routing tests still pass (`/api/months` → 401, SPA fallback): `./mvnw test -Dtest=WebRoutingTests` — 9b82105
+- [x] 1.5 Formatting is clean: `./mvnw spotless:check` — 9b82105
 
 #### Manual
 
-- [x] 1.6 With the backend running locally, `curl` (cookie jar) register → me → logout → me shows 201 → 200 → 204 → 401, and a second register with the same email in different letter case returns 409
-- [x] 1.7 In the DB, `users.password_hash` starts with `{bcrypt}` and the email is stored lowercase
+- [x] 1.6 With the backend running locally, `curl` (cookie jar) register → me → logout → me shows 201 → 200 → 204 → 401, and a second register with the same email in different letter case returns 409 — 9b82105
+- [x] 1.7 In the DB, `users.password_hash` starts with `{bcrypt}` and the email is stored lowercase — 9b82105
 
 ### Phase 2: Account isolation kit
 
 #### Automated
 
-- [ ] 2.1 Isolation tests pass: `./mvnw test -Dtest=AccountIsolationTests`
-- [ ] 2.2 Full backend suite passes: `./mvnw test`
-- [ ] 2.3 Formatting is clean: `./mvnw spotless:check`
+- [x] 2.1 Isolation tests pass: `./mvnw test -Dtest=AccountIsolationTests`
+- [x] 2.2 Full backend suite passes: `./mvnw test`
+- [x] 2.3 Formatting is clean: `./mvnw spotless:check`
 
 #### Manual
 
-- [ ] 2.4 `context/foundation/lessons.md` rule and `docs/reference/contract-surfaces.md` read as clear, actionable guidance for S-02 planning
+- [x] 2.4 `context/foundation/lessons.md` rule and `docs/reference/contract-surfaces.md` read as clear, actionable guidance for S-02 planning
 
 ### Phase 3: Frontend auth
 

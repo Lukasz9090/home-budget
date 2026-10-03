@@ -3,7 +3,7 @@ change_id: account-signup-and-login
 title: Sign up, log in and long session with per-account data isolation
 status: implementing
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-10-03
 archived_at: null
 ---
 
