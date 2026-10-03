@@ -1,0 +1,57 @@
+<main class="auth-page">
+  <div class="auth-card">
+    <p class="brand">PennyPlan</p>
+    <h1>Załóż konto</h1>
+
+    <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+      @if (error(); as message) {
+        <p class="form-error" role="alert">{{ message }}</p>
+      }
+
+      <div class="field">
+        <label for="register-email">E-mail</label>
+        <input id="register-email" type="email" formControlName="email" autocomplete="email" />
+        @if (form.controls.email.touched && form.controls.email.invalid) {
+          <p class="field-error">
+            @if (form.controls.email.hasError('required')) {
+              Podaj adres e-mail.
+            } @else if (form.controls.email.hasError('maxlength')) {
+              Adres e-mail może mieć najwyżej 254 znaki.
+            } @else {
+              Podaj poprawny adres e-mail.
+            }
+          </p>
+        }
+      </div>
+
+      <div class="field">
+        <label for="register-password">Hasło</label>
+        <input
+          id="register-password"
+          type="password"
+          formControlName="password"
+          autocomplete="new-password"
+          aria-describedby="register-password-hint"
+        />
+        <p class="hint" id="register-password-hint">Co najmniej 8 znaków</p>
+        @if (form.controls.password.touched && form.controls.password.invalid) {
+          <p class="field-error">
+            @if (form.controls.password.hasError('required')) {
+              Podaj hasło.
+            } @else if (form.controls.password.hasError('minlength')) {
+              Hasło musi mieć co najmniej 8 znaków.
+            } @else {
+              Hasło może mieć najwyżej 72 znaki.
+            }
+          </p>
+        }
+      </div>
+
+      <button type="submit" class="btn btn-primary" [disabled]="form.invalid || pending()">
+        {{ pending() ? 'Zakładanie konta…' : 'Załóż konto' }}
+      </button>
+    </form>
+
+    <p class="auth-switch">Masz już konto? <a routerLink="/login">Zaloguj się</a></p>
+  </div>
+</main>

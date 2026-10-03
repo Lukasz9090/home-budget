@@ -368,28 +368,28 @@ Each authenticated request now updates `SPRING_SESSION.LAST_ACCESS_TIME` (alread
 
 #### Automated
 
-- [x] 2.1 Isolation tests pass: `./mvnw test -Dtest=AccountIsolationTests`
-- [x] 2.2 Full backend suite passes: `./mvnw test`
-- [x] 2.3 Formatting is clean: `./mvnw spotless:check`
+- [x] 2.1 Isolation tests pass: `./mvnw test -Dtest=AccountIsolationTests` — 2d81d40
+- [x] 2.2 Full backend suite passes: `./mvnw test` — 2d81d40
+- [x] 2.3 Formatting is clean: `./mvnw spotless:check` — 2d81d40
 
 #### Manual
 
-- [x] 2.4 `context/foundation/lessons.md` rule and `docs/reference/contract-surfaces.md` read as clear, actionable guidance for S-02 planning
+- [x] 2.4 `context/foundation/lessons.md` rule and `docs/reference/contract-surfaces.md` read as clear, actionable guidance for S-02 planning — 2d81d40
 
 ### Phase 3: Frontend auth
 
 #### Automated
 
-- [ ] 3.1 Frontend unit tests pass: `npm test -- --watch=false`
-- [ ] 3.2 Lint passes: `npm run lint`
-- [ ] 3.3 Production build succeeds: `npm run build`
-- [ ] 3.4 Backend suite still passes: `./mvnw test`
+- [x] 3.1 Frontend unit tests pass: `npm test -- --watch=false`
+- [x] 3.2 Lint passes: `npm run lint`
+- [x] 3.3 Production build succeeds: `npm run build`
+- [x] 3.4 Backend suite still passes: `./mvnw test`
 
 #### Manual
 
-- [ ] 3.5 Logged out, opening `http://localhost:4200/` lands on `/login`; sign-up with a new email lands on the shell showing that email
-- [ ] 3.6 Browser refresh on the shell keeps the user logged in; DevTools shows the `SESSION` cookie expiry ~45 days ahead and it moves forward after another request a minute later
-- [ ] 3.7 "Wyloguj" returns to `/login`, and the back button does not show the shell
-- [ ] 3.8 Wrong password shows the generic error; signing up again with the same email (different letter case) shows the "already exists" message
-- [ ] 3.9 Two browser profiles with two accounts each see only their own email in the shell
-- [ ] 3.10 Login and sign-up screens are comfortable at phone width (DevTools 360 px)
+- [x] 3.5 Logged out, opening `http://localhost:4200/` lands on `/login`; sign-up with a new email lands on the shell showing that email
+- [x] 3.6 Browser refresh on the shell keeps the user logged in; DevTools shows the `SESSION` cookie expiry ~45 days ahead and it moves forward after another request a minute later
+- [x] 3.7 "Wyloguj" returns to `/login`, and the back button does not show the shell
+- [x] 3.8 Wrong password shows the generic error; signing up again with the same email (different letter case) shows the "already exists" message
+- [x] 3.9 Two browser profiles with two accounts each see only their own email in the shell
+- [x] 3.10 Login and sign-up screens are comfortable at phone width (DevTools 360 px)
