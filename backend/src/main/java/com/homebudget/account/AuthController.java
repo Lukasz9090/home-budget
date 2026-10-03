@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.context.SecurityContextHolderStrategy;
@@ -31,6 +30,7 @@ public class AuthController {
     private final AccountService accountService;
     private final SessionAuthenticationStrategy sessionAuthenticationStrategy;
     private final SecurityContextRepository securityContextRepository;
+    private final CurrentUser currentUser;
     private final SecurityContextHolderStrategy securityContextHolderStrategy =
             SecurityContextHolder.getContextHolderStrategy();
 
@@ -38,11 +38,13 @@ public class AuthController {
             AuthenticationManager authenticationManager,
             AccountService accountService,
             SessionAuthenticationStrategy sessionAuthenticationStrategy,
-            SecurityContextRepository securityContextRepository) {
+            SecurityContextRepository securityContextRepository,
+            CurrentUser currentUser) {
         this.authenticationManager = authenticationManager;
         this.accountService = accountService;
         this.sessionAuthenticationStrategy = sessionAuthenticationStrategy;
         this.securityContextRepository = securityContextRepository;
+        this.currentUser = currentUser;
     }
 
     /** Creates the account and logs the caller in straight away. */
@@ -71,8 +73,8 @@ public class AuthController {
     }
 
     @GetMapping("/api/me")
-    public AccountResponse me(@AuthenticationPrincipal AccountPrincipal principal) {
-        return AccountResponse.of(principal);
+    public AccountResponse me() {
+        return AccountResponse.of(currentUser.principal());
     }
 
     /**
