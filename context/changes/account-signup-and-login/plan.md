@@ -380,16 +380,16 @@ Each authenticated request now updates `SPRING_SESSION.LAST_ACCESS_TIME` (alread
 
 #### Automated
 
-- [x] 3.1 Frontend unit tests pass: `npm test -- --watch=false`
-- [x] 3.2 Lint passes: `npm run lint`
-- [x] 3.3 Production build succeeds: `npm run build`
-- [x] 3.4 Backend suite still passes: `./mvnw test`
+- [x] 3.1 Frontend unit tests pass: `npm test -- --watch=false` — 0e45a7a
+- [x] 3.2 Lint passes: `npm run lint` — 0e45a7a
+- [x] 3.3 Production build succeeds: `npm run build` — 0e45a7a
+- [x] 3.4 Backend suite still passes: `./mvnw test` — 0e45a7a
 
 #### Manual
 
-- [x] 3.5 Logged out, opening `http://localhost:4200/` lands on `/login`; sign-up with a new email lands on the shell showing that email
-- [x] 3.6 Browser refresh on the shell keeps the user logged in; DevTools shows the `SESSION` cookie expiry ~45 days ahead and it moves forward after another request a minute later
-- [x] 3.7 "Wyloguj" returns to `/login`, and the back button does not show the shell
-- [x] 3.8 Wrong password shows the generic error; signing up again with the same email (different letter case) shows the "already exists" message
-- [x] 3.9 Two browser profiles with two accounts each see only their own email in the shell
-- [x] 3.10 Login and sign-up screens are comfortable at phone width (DevTools 360 px)
+- [x] 3.5 Logged out, opening `http://localhost:4200/` lands on `/login`; sign-up with a new email lands on the shell showing that email — 0e45a7a
+- [x] 3.6 Browser refresh on the shell keeps the user logged in; DevTools shows the `SESSION` cookie expiry ~45 days ahead and it moves forward after another request a minute later — 0e45a7a
+- [x] 3.7 "Wyloguj" returns to `/login`, and the back button does not show the shell — 0e45a7a
+- [x] 3.8 Wrong password shows the generic error; signing up again with the same email (different letter case) shows the "already exists" message — 0e45a7a
+- [x] 3.9 Two browser profiles with two accounts each see only their own email in the shell — 0e45a7a
+- [x] 3.10 Login and sign-up screens are comfortable at phone width (DevTools 360 px) — 0e45a7a
