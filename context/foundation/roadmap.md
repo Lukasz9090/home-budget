@@ -41,7 +41,7 @@ Osoba prowadząca budżet metodą kopertową dzieli dziś każdy dochód procent
 
 | ID   | Change ID                   | Outcome (user can …)                                                                 | Prerequisites | PRD refs                                    | Status   |
 | ---- | --------------------------- | ------------------------------------------------------------------------------------ | ------------- | ------------------------------------------- | -------- |
-| S-01 | account-signup-and-login    | założyć konto, zalogować się, wylogować i wrócić po miesiącu bez ponownego logowania | —             | FR-001, FR-002                              | planning |
+| S-01 | account-signup-and-login    | założyć konto, zalogować się, wylogować i wrócić po miesiącu bez ponownego logowania | —             | FR-001, FR-002                              | in-progress |
 | S-02 | first-categories            | zdefiniować własne kategorie przepływowe i narastające, z pustym stanem z przykładami | S-01          | FR-003, FR-004, FR-017                      | proposed |
 | S-03 | month-income-split          | dodać miesiąc, wpisać dochód własnego typu i rozdzielić go procentowo z korektą kwot | S-02          | US-01, FR-008, FR-010, FR-011, FR-012, FR-013 | proposed |
 | S-04 | rolling-split-suggestion    | dostać procenty podpowiedziane z ostatniego użycia danego typu dochodu               | S-03          | US-01, FR-009                               | proposed |
@@ -89,7 +89,7 @@ Brak osobnych fundamentów. Deploy jest gotowy, a pozostałe warstwy (auth, dane
 - **Unknowns:**
   - Jak wygląda pierwsza sesja po rejestracji (PRD Open Question 1)? — Owner: user. Block: no.
 - **Risk:** Pierwszy plaster ustala wzorzec „każdy odczyt i zapis jest zawężony do właściciela”, na którym opiera się guardrail izolacji kont; zrobiony źle, przecieka do każdego kolejnego plastra.
-- **Status:** planning
+- **Status:** in-progress
 
 ### S-02: Pierwsze kategorie
 

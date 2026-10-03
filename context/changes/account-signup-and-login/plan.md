@@ -353,16 +353,16 @@ Each authenticated request now updates `SPRING_SESSION.LAST_ACCESS_TIME` (alread
 
 #### Automated
 
-- [ ] 1.1 Flyway applies `V2__users.sql` and Hibernate validation passes: `./mvnw test` (context loads)
-- [ ] 1.2 Auth flow integration tests pass: `./mvnw test -Dtest=AuthFlowTests`
-- [ ] 1.3 Session/CSRF cookie tests pass: `./mvnw test -Dtest=SessionCookieTests`
-- [ ] 1.4 Existing routing tests still pass (`/api/months` → 401, SPA fallback): `./mvnw test -Dtest=WebRoutingTests`
-- [ ] 1.5 Formatting is clean: `./mvnw spotless:check`
+- [x] 1.1 Flyway applies `V2__users.sql` and Hibernate validation passes: `./mvnw test` (context loads)
+- [x] 1.2 Auth flow integration tests pass: `./mvnw test -Dtest=AuthFlowTests`
+- [x] 1.3 Session/CSRF cookie tests pass: `./mvnw test -Dtest=SessionCookieTests`
+- [x] 1.4 Existing routing tests still pass (`/api/months` → 401, SPA fallback): `./mvnw test -Dtest=WebRoutingTests`
+- [x] 1.5 Formatting is clean: `./mvnw spotless:check`
 
 #### Manual
 
-- [ ] 1.6 With the backend running locally, `curl` (cookie jar) register → me → logout → me shows 201 → 200 → 204 → 401, and a second register with the same email in different letter case returns 409
-- [ ] 1.7 In the DB, `users.password_hash` starts with `{bcrypt}` and the email is stored lowercase
+- [x] 1.6 With the backend running locally, `curl` (cookie jar) register → me → logout → me shows 201 → 200 → 204 → 401, and a second register with the same email in different letter case returns 409
+- [x] 1.7 In the DB, `users.password_hash` starts with `{bcrypt}` and the email is stored lowercase
 
 ### Phase 2: Account isolation kit
 
