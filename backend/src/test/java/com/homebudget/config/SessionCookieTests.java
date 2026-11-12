@@ -5,6 +5,7 @@ import static com.homebudget.support.CookieJarClient.XSRF_TOKEN;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import com.homebudget.TestcontainersConfiguration;
 import com.homebudget.support.CookieJarClient;
 import jakarta.servlet.http.Cookie;
 import java.util.UUID;
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
+import org.springframework.context.annotation.Import;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -24,6 +26,7 @@ import org.springframework.test.web.servlet.MockMvc;
  * container instead, which has no max-age. Requests still go through MockMvc.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Import(TestcontainersConfiguration.class)
 @AutoConfigureMockMvc
 class SessionCookieTests {
 
