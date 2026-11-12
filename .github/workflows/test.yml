@@ -8,18 +8,8 @@ on:
 
 jobs:
   backend:
+    # Tests start their own Postgres via Testcontainers (Docker is preinstalled on the runner).
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:16-alpine
-        env:
-          POSTGRES_DB: budget
-          POSTGRES_USER: home_u
-          POSTGRES_PASSWORD: home_p
-        ports: ["5432:5432"]
-        options: >-
-          --health-cmd "pg_isready -U home_u -d budget"
-          --health-interval 5s --health-timeout 5s --health-retries 10
     defaults:
       run:
         working-directory: backend
