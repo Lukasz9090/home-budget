@@ -29,7 +29,7 @@ spring:
     # Sessions live in Postgres so they survive cold starts; PRD requires a long session.
     timeout: 45d
     jdbc:
-      # Tables are created by Flyway (V1__spring_session.sql), never by Spring Session.
+      # Tables are created by Flyway (V1__spring_ session.sql), never by Spring Session.
       initialize-schema: never
       # Default is every minute, which would keep Neon awake; once a day is enough.
       cleanup-cron: "0 0 3 * * *"
