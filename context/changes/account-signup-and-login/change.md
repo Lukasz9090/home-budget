@@ -1,9 +1,9 @@
 ---
 change_id: account-signup-and-login
 title: Sign up, log in and long session with per-account data isolation
-status: implemented
+status: impl_reviewed
 created: 2026-10-02
-updated: 2026-10-03
+updated: 2026-11-12
 archived_at: null
 ---
 
