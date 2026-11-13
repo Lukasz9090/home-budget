@@ -1,2 +1,6 @@
 /mvnw text eol=lf
 *.cmd text eol=crlf
+
+# 10x-cli fingerprints exact bytes; CRLF checkouts look like local edits
+/.claude/** text eol=lf
+/CLAUDE.md text eol=lf
