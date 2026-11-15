@@ -514,35 +514,35 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Automated
 
-- [x] 4.1 Production build passes: `npm run build`
-- [x] 4.2 Unit tests pass, including the new login spinner test: `npm test -- --watch=false`
-- [x] 4.3 Lint passes: `npm run lint`
-- [x] 4.4 Hardcoded-value scan from `/10x-ui` on `src/app/**/*.{html,ts,css}` (excluding `*.spec.ts`) returns 0 hits
-- [x] 4.5 `src/styles.css` contains none of `.btn`, `.field`, `.form-error`, `.auth-card` (Bash `grep`)
+- [x] 4.1 Production build passes: `npm run build` — 0b74917
+- [x] 4.2 Unit tests pass, including the new login spinner test: `npm test -- --watch=false` — 0b74917
+- [x] 4.3 Lint passes: `npm run lint` — 0b74917
+- [x] 4.4 Hardcoded-value scan from `/10x-ui` on `src/app/**/*.{html,ts,css}` (excluding `*.spec.ts`) returns 0 hits — 0b74917
+- [x] 4.5 `src/styles.css` contains none of `.btn`, `.field`, `.form-error`, `.auth-card` (Bash `grep`) — 0b74917
 
 #### Manual
 
-- [x] 4.6 Login, register and shell + home match their mockup frames at 1440px and 390px; every visible difference is one recorded in `mockup-review.md`
-- [x] 4.7 Login and register: field error, server error alert and disabled/pending submit work; Tab order and focus ring visible on every control
-- [x] 4.8 Logged-in shell: logout works; e-mail truncates on mobile
+- [x] 4.6 Login, register and shell + home match their mockup frames at 1440px and 390px; every visible difference is one recorded in `mockup-review.md` — 0b74917
+- [x] 4.7 Login and register: field error, server error alert and disabled/pending submit work; Tab order and focus ring visible on every control — 0b74917
+- [x] 4.8 Logged-in shell: logout works; e-mail truncates on mobile — 0b74917
 - [ ] 4.9 Screenshots of login, register (with a field error) and shell at 1440px and 390px saved to `context/changes/design-system/screenshots/phase4-*`
 
 ### Phase 5: States and guard
 
 #### Automated
 
-- [ ] 5.1 Literal scan passes: `npm run lint:ui`
-- [ ] 5.2 Literal scan fails on planted literals (temporarily add `class="bg-blue-500"`, then `class="w-[50%]"` to a view, expect exit 1 each time, revert)
-- [ ] 5.3 Literal scan fails on a planted dark variant (temporarily add `class="dark:bg-card"` to a view, expect exit 1, revert)
-- [ ] 5.4 Lint and tests pass: `npm run lint` and `npm test -- --watch=false`
-- [ ] 5.5 Production bundle has no kitchen sink: `npm run build`, then no `kitchen` match in `frontend/dist/` (Bash `grep -ri`)
-- [ ] 5.6 `CLAUDE.md` UI section sits outside the `@przeprogramowani/10x-cli` markers and states the mockup rule, the token/component rule and the dark-mode token-layer rule
-- [ ] 5.7 Final clean-install run: `npm ci && npm run build && npm test -- --watch=false && npm run lint && npm run lint:ui`
+- [x] 5.1 Literal scan passes: `npm run lint:ui`
+- [x] 5.2 Literal scan fails on planted literals (temporarily add `class="bg-blue-500"`, then `class="w-[50%]"` to a view, expect exit 1 each time, revert)
+- [x] 5.3 Literal scan fails on a planted dark variant (temporarily add `class="dark:bg-card"` to a view, expect exit 1, revert)
+- [x] 5.4 Lint and tests pass: `npm run lint` and `npm test -- --watch=false`
+- [x] 5.5 Production bundle has no kitchen sink: `npm run build`, then no `kitchen` match in `frontend/dist/` (Bash `grep -ri`)
+- [x] 5.6 `CLAUDE.md` UI section sits outside the `@przeprogramowani/10x-cli` markers and states the mockup rule, the token/component rule and the dark-mode token-layer rule
+- [x] 5.7 Final clean-install run: `npm ci && npm run build && npm test -- --watch=false && npm run lint && npm run lint:ui`
 
 #### Manual
 
-- [ ] 5.8 `/dev/kitchen-sink` opens in `ng serve` without logging in; every matrix cell is shown or marked N/A with a reason
-- [ ] 5.9 Hover changes and keyboard focus ring are visible on every control in the kitchen sink
-- [ ] 5.10 Dark preview: with the toggle on, every matrix cell is readable (text, borders, focus ring, destructive error, disabled) with no light-only surfaces; navigating away from the kitchen sink returns the app to light
+- [x] 5.8 `/dev/kitchen-sink` opens in `ng serve` without logging in; every matrix cell is shown or marked N/A with a reason
+- [x] 5.9 Hover changes and keyboard focus ring are visible on every control in the kitchen sink
+- [x] 5.10 Dark preview: with the toggle on, every matrix cell is readable (text, borders, focus ring, destructive error, disabled) with no light-only surfaces; navigating away from the kitchen sink returns the app to light
 - [ ] 5.11 Kitchen sink screenshots at 1440px and 390px in light, plus 1440px in dark, saved to `context/changes/design-system/screenshots/kitchen-sink-*`
 - [ ] 5.12 CI run on the PR is green with the new lint steps

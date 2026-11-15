@@ -2,8 +2,10 @@ import { Routes } from '@angular/router';
 
 import { authGuard } from './auth/auth.guard';
 import { guestGuard } from './auth/guest.guard';
+import { devRoutes } from './dev/dev-routes';
 
 export const routes: Routes = [
+  ...devRoutes,
   {
     path: 'login',
     canActivate: [guestGuard],
