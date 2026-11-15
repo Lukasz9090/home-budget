@@ -20,6 +20,15 @@ Mockups (registry: `context/design/mockups.md`):
 - Read each frame once and deposit what it shows in the change folder (Figma API quota).
 - Exempt: `/dev/*` routes and changes with no visual effect (logic, tests).
 
+Tokens and components:
+- Tokens live in `frontend/src/styles.css` (spartan `nova` + `neutral`; values in `:root`, published via `@theme inline`). Use semantic classes (`bg-primary`, `text-muted-foreground`, `border-border`…); never literal colours, palette classes or arbitrary values in `src/app` — `npm run lint:ui` enforces it.
+- Components live in `frontend/libs/ui` (import `@spartan-ng/helm/<name>`). Check there first; add a missing one only via `npx ng g @spartan-ng/cli:ui <name>` from `frontend/`. Never hand-roll a button/input/card; never run `ui-theme`. Helm files are ours, but edit them deliberately.
+- Dark mode lives only in the token layer: no `dark:` classes in `src/app`; every new token (e.g. `--warning`) is defined in both `:root` and `:root.dark` and published via `@theme inline` as `var(--…)`, never a raw value. Enabling dark mode = toggling the `dark` class on `<html>`.
+- Forms: `<hlm-field-error>` shows on touched — call `markAllAsTouched()` on submit.
+- Icons: `@ng-icons/lucide` + `provideIcons`; `@ng-icons/*` pinned `<34` while on Angular 21.
+- Vitest/jsdom lacks `matchMedia`/`ResizeObserver` — add `setupFiles` stubs before using sonner/tabs/sidebar/resizable.
+- New component states go into the kitchen sink at `/dev/kitchen-sink` (`ng serve` only).
+
 <!-- BEGIN @przeprogramowani/10x-cli -->
 
 ## 10xDevs AI Toolkit - Module 2, Lesson 5 (10xDevs 4.0 UI)

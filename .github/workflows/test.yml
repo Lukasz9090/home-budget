@@ -34,4 +34,6 @@ jobs:
           node-version: "24"
       # Same npm as package.json "packageManager"; newer npm rejects this lockfile.
       - run: npm install -g "$(node -p "require('./package.json').packageManager")" && npm ci
+      - run: npm run lint
+      - run: npm run lint:ui
       - run: npm test -- --watch=false
