@@ -81,7 +81,28 @@ describe('Login', () => {
 
     await vi.waitFor(async () => {
       await harness.fixture.whenStable();
-      expect(query('[role="alert"]')?.textContent).toContain('Nieprawidłowy e-mail lub hasło.');
+      expect(query('[hlmAlert]')?.textContent).toContain('Nieprawidłowy e-mail lub hasło.');
+    });
+    expect(submitButton().disabled).toBe(false);
+  });
+
+  it('shows a spinner in the disabled submit button while the request is pending', async () => {
+    await harness.navigateByUrl('/login', Login);
+    await fillAndSubmit();
+
+    expect(submitButton().disabled).toBe(true);
+    expect(submitButton().querySelector('hlm-spinner')).not.toBeNull();
+
+    http
+      .expectOne('/api/auth/login')
+      .flush(
+        { detail: 'Nieprawidłowy e-mail lub hasło.' },
+        { status: 401, statusText: 'Unauthorized' },
+      );
+
+    await vi.waitFor(async () => {
+      await harness.fixture.whenStable();
+      expect(submitButton().querySelector('hlm-spinner')).toBeNull();
     });
     expect(submitButton().disabled).toBe(false);
   });

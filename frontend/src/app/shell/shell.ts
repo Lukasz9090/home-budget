@@ -1,14 +1,16 @@
 import { Component, inject, signal } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { HlmButtonImports } from '@spartan-ng/helm/button';
+import { HlmSeparatorImports } from '@spartan-ng/helm/separator';
 
 import { AuthService } from '../auth/auth.service';
 
 /** Logged-in layout: header with the account e-mail and logout, child routes below. */
 @Component({
   selector: 'app-shell',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HlmButtonImports, HlmSeparatorImports],
   templateUrl: './shell.html',
-  styleUrl: './shell.css',
+  host: { class: 'flex min-h-dvh flex-col' },
 })
 export class Shell {
   private readonly auth = inject(AuthService);

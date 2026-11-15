@@ -56,7 +56,7 @@ describe('Register', () => {
 
   it('shows the password hint', async () => {
     await harness.navigateByUrl('/register', Register);
-    expect(query('.hint').textContent).toContain('Co najmniej 8 znaków');
+    expect(query('#register-password-hint').textContent).toContain('Co najmniej 8 znaków');
   });
 
   it('disables submit while the password is shorter than 8 or longer than 72 characters', async () => {
@@ -66,7 +66,7 @@ describe('Register', () => {
     type('#register-password', '1234567');
     await harness.fixture.whenStable();
     expect(submitButton().disabled).toBe(true);
-    expect(query('.field-error').textContent).toContain('co najmniej 8 znaków');
+    expect(query('#register-password-error').textContent).toContain('co najmniej 8 znaków');
 
     type('#register-password', 'a'.repeat(73));
     await harness.fixture.whenStable();
@@ -90,7 +90,7 @@ describe('Register', () => {
 
     await vi.waitFor(async () => {
       await harness.fixture.whenStable();
-      expect(query('[role="alert"]')?.textContent).toContain(
+      expect(query('[hlmAlert]')?.textContent).toContain(
         'Konto z tym adresem e-mail już istnieje.',
       );
     });
