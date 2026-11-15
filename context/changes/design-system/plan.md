@@ -9,7 +9,7 @@ Introduce a design-system contract into the Angular frontend before the first do
 - No Tailwind in `frontend/package.json`; all styles are SCSS files with no Sass syntax: `src/styles.scss` (203 lines), `app/app.scss`, `auth/login/login.scss`, `auth/register/register.scss`, `shell/shell.scss`. `angular.json:14,26,33` point the component schematic, `inlineStyleLanguage` and `styles` at SCSS.
 - `src/styles.scss:3-15` holds the current tokens (`--color-bg`, `--color-surface`, `--color-text`, `--color-muted`, `--color-border`, `--color-primary(-hover)` `#2f5bd3`, `--color-danger(-bg)`, `--radius`, `--focus-ring`). The same file defines global component classes that act as the de-facto design system: `.auth-page`/`.auth-card`/`.brand`/`.auth-switch` (`:66-96`), `.form`/`.field`/`.hint`/`.field-error`/`.form-error` (`:100-149`), `.btn`/`.btn-primary`/`.btn-secondary` (`:153-203`).
 - Consumers: `auth/login/login.html`, `auth/register/register.html`, `shell/shell.html` (+ `shell.scss`), `home/home.ts` (inline template). The `/10x-ui` literal scan on these files returns 0 hits; views already read `var(--color-*)`, so tokens exist but there are no importable components.
-- No mockups exist for any screen; there is no mockup registry and no Figma MCP server configured in the agent sessions.
+- There is no mockup registry yet. The mockups for login, register and shell + home exist (Figma `QMx4nvFcQC9mpTjJCWPwuS`, page `1. auth`, 6 frames), Figma MCP (Framelink) was configured on 2026-11-14, and the single reading of all six frames with the user's decisions is already in `context/changes/design-system/mockup-review.md` (2026-11-15).
 - `frontend/node_modules` contains spartan `brain`/`cli` 1.9.0, `@angular/cdk`, `@ng-icons/*`, `tailwind-merge`, `tw-animate-css`, `nx` and dozens of other packages as **extraneous** (not in `package.json`). CI (`.github/workflows/test.yml:36`) and the Vercel image (`Dockerfile.vercel:10`) install with `npm ci`, so anything not written to `package.json`/`package-lock.json` disappears there.
 - Tests depend on CSS classes: `auth/register/register.spec.ts:59` (`.hint`) and `:69` (`.field-error`). Selectors `#…-email`, `#…-password`, `button[type="submit"]`, `[role="alert"]` are stable.
 - CI's frontend job runs only `npm test`; `npm run lint` is not in CI. No pre-commit hook, no Playwright.
@@ -147,7 +147,7 @@ Tailwind v4 and spartan installed and recorded in `package.json`, the `neutral` 
 
 #### Manual Verification:
 
-- Login, register and the logged-in shell look the same as before the phase (ng serve)
+- Login, register and the logged-in shell keep the same layout and colours as before the phase (ng serve); known Tailwind preflight differences (headings no longer bold, links without underline) are accepted until Phase 4
 
 **Implementation Note**: After completing this phase and all automated verification passes, pause here for manual confirmation from the human that the manual testing was successful before proceeding to the next phase.
 
@@ -242,7 +242,7 @@ Every product screen gets a registered Figma mockup before any view is built. Th
 
 #### 4. Mockup review
 
-**File**: `context/changes/design-system/mockup-review.md` (new)
+**File**: `context/changes/design-system/mockup-review.md` (exists, written 2026-11-15)
 
 **Intent**: Deposit one reading of each frame, so Phase 4 implements from the repo instead of spending Figma calls, and record how every discrepancy was resolved.
 
@@ -261,6 +261,7 @@ Every product screen gets a registered Figma mockup before any view is built. Th
 - The agent read all six frames through Figma MCP and `mockup-review.md` covers each of them
 - Every discrepancy in `mockup-review.md` has a recorded user decision
 - Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops
+- Figma PAT rotated (new token with `file_content:read` + `file_metadata:read` only); Figma MCP still reads a frame
 
 **Implementation Note**: After completing this phase and all automated verification passes, pause here for manual confirmation from the human that the manual testing was successful before proceeding to the next phase.
 
@@ -291,8 +292,8 @@ Login, register, shell and home are rebuilt from helm components and semantic Ta
 **Contract**:
 - Layout, spacing, element order and copy follow `mockup-review.md` (including its recorded decisions); nothing outside it is invented.
 - Input ids, `formControlName`, `autocomplete` and `aria-describedby` (register password hint keeps `id="register-password-hint"`) unchanged.
-- Server error stays reachable as `[role="alert"]` containing the message.
-- Field errors render inside `<hlm-field-error>` without a wrapping `touched && invalid` `@if`; inner `@if`/`@else` still picks the message per validator.
+- Server error is a destructive `hlmAlert` placed before the field group; its `role="alert"` comes from the `hlmAlert` host only (no inner element with `role`). Note: `<hlm-field-error>` also stays in the DOM with `role="alert"` (hidden while there is no error), so tests must not rely on a bare `[role="alert"]` or `hlm-field-error` query.
+- Field errors render inside `<hlm-field-error>` without a wrapping `touched && invalid` `@if`; inner `@if`/`@else` still picks the message per validator. Each `<hlm-field-error>` gets an explicit id: `login-email-error`, `login-password-error`, `register-email-error`, `register-password-error`.
 - Submit button: `hlmBtn`, `[disabled]` unchanged; while `pending()` it shows `<hlm-spinner />` before the existing pending text (state "bez makiety" unless drawn).
 - Brand "PennyPlan" sits above the card, outside it; inputs have no placeholder and no prefilled value.
 - The `/register` ↔ `/login` link is the whole sentence ("Nie masz konta? Załóż konto" / "Masz już konto? Zaloguj się") as an `<a hlmBtn variant="link" routerLink>` below the card, not a global `a` rule.
@@ -320,7 +321,7 @@ Login, register, shell and home are rebuilt from helm components and semantic Ta
 
 **Intent**: Replace class selectors that no longer exist and cover the new loading state.
 
-**Contract**: `register.spec.ts:59` → `#register-password-hint`; `:69` → `hlm-field-error`. New login test: after submit and before the HTTP response, the submit button is disabled and contains `hlm-spinner`; after flushing an error it no longer does. If a mockup decision changed copy, the affected assertions follow the new copy.
+**Contract**: `register.spec.ts:59` → `#register-password-hint`; `:69` → `#register-password-error`; `login.spec.ts:84` and `register.spec.ts:93` (`[role="alert"]`) → `[hlmAlert]`. New login test: after submit and before the HTTP response, the submit button is disabled and contains `hlm-spinner`; after flushing an error it no longer does. If a mockup decision changed copy, the affected assertions follow the new copy.
 
 ### Success Criteria:
 
@@ -380,7 +381,7 @@ Built only from helm components and semantic classes (passes `lint:ui`). A Light
 
 **Intent**: Turn the `/10x-ui` hardcoded-value scan into a cross-platform check (npm scripts run under cmd.exe on Windows, so no `grep`).
 
-**Contract**: `npm run lint:ui` → `node scripts/check-ui-literals.mjs`. Scans `src/app/**/*.{html,ts,css}` except `*.spec.ts`, using the `/10x-ui` regex (hex, `rgb(a)`, `hsl(a)`, `oklch(`, arbitrary `-[Npx|rem]`, Tailwind palette classes) plus `\bdark:` (dark mode belongs to the token layer; `libs/ui` is not scanned, its own `dark:` variants are fine). Lines containing `ui-literals-ignore` are skipped. Prints `file:line: match` per hit, exits 1 on any hit. Node built-ins only; no new dependency.
+**Contract**: `npm run lint:ui` → `node scripts/check-ui-literals.mjs`. Scans `src/app/**/*.{html,ts,css}` except `*.spec.ts`, using the `/10x-ui` regex (hex, `rgb(a)`, `hsl(a)`, `oklch(`, arbitrary `-[Npx|rem]`, Tailwind palette classes) plus any arbitrary-value utility `\b[a-z][a-z0-9-]*-\[[^\]]+\]` (`w-[50%]`, `bg-[var(--x)]`, `h-[calc(…)]`) plus `\bdark:` (dark mode belongs to the token layer; `libs/ui` is not scanned, its own `dark:` variants are fine). Lines containing `ui-literals-ignore` are skipped. Prints `file:line: match` per hit, exits 1 on any hit. Node built-ins only; no new dependency.
 
 #### 4. CI
 
@@ -403,7 +404,7 @@ Built only from helm components and semantic classes (passes `lint:ui`). A Light
 #### Automated Verification:
 
 - Literal scan passes: `npm run lint:ui`
-- Literal scan fails on a planted literal (temporarily add `class="bg-blue-500"` to a view, expect exit 1, revert)
+- Literal scan fails on planted literals (temporarily add `class="bg-blue-500"`, then `class="w-[50%]"` to a view, expect exit 1 each time, revert)
 - Literal scan fails on a planted dark variant (temporarily add `class="dark:bg-card"` to a view, expect exit 1, revert)
 - Lint and tests pass: `npm run lint` and `npm test -- --watch=false`
 - Production bundle has no kitchen sink: `npm run build`, then no `kitchen` match in `frontend/dist/` (Bash `grep -ri`)
@@ -426,9 +427,9 @@ Built only from helm components and semantic classes (passes `lint:ui`). A Light
 
 ### Unit Tests:
 
-- Existing login/register/guard/interceptor/service specs keep passing; only the two class selectors in `register.spec.ts` change (plus copy assertions if a mockup decision changed copy).
+- Existing login/register/guard/interceptor/service specs keep passing; only the two class selectors in `register.spec.ts` and the two `[role="alert"]` selectors (`login.spec.ts:84`, `register.spec.ts:93`) change (plus copy assertions if a mockup decision changed copy).
 - New: login submit shows `hlm-spinner` inside the disabled submit button while the request is pending.
-- `register.spec.ts` field-error test keeps proving that `<hlm-field-error>` appears after blur (touched) with the min-length message.
+- `register.spec.ts` field-error test keeps proving that `#register-password-error` shows the min-length message after blur (touched).
 
 ### Integration Tests:
 
@@ -469,16 +470,16 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Automated
 
-- [ ] 1.1 Clean install succeeds and leaves no extraneous packages: `npm ci && npm ls --depth=0` (in `frontend/`)
-- [ ] 1.2 Production build passes: `npm run build`
-- [ ] 1.3 Unit tests pass: `npm test -- --watch=false`
-- [ ] 1.4 Lint passes: `npm run lint`
-- [ ] 1.5 No `.scss` files remain under `frontend/src`
-- [ ] 1.6 `styles.css` contains exactly one generated `:root` theme block (no duplicate from `ui-theme`)
+- [x] 1.1 Clean install succeeds and leaves no extraneous packages: `npm ci && npm ls --depth=0` (in `frontend/`)
+- [x] 1.2 Production build passes: `npm run build`
+- [x] 1.3 Unit tests pass: `npm test -- --watch=false`
+- [x] 1.4 Lint passes: `npm run lint`
+- [x] 1.5 No `.scss` files remain under `frontend/src`
+- [x] 1.6 `styles.css` contains exactly one generated `:root` theme block (no duplicate from `ui-theme`)
 
 #### Manual
 
-- [ ] 1.7 Login, register and the logged-in shell look the same as before the phase (ng serve)
+- [x] 1.7 Login, register and the logged-in shell keep the same layout and colours as before the phase (ng serve); known Tailwind preflight differences (headings no longer bold, links without underline) are accepted until Phase 4
 
 ### Phase 2: Tokens — one source of values
 
@@ -503,10 +504,11 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Manual
 
-- [ ] 3.3 The user designed desktop (1440px) and mobile (390px) frames for login, register and shell + home on the spartan kit (style `nova`, theme `neutral`) and registered them
-- [ ] 3.4 The agent read all six frames through Figma MCP and `mockup-review.md` covers each of them
-- [ ] 3.5 Every discrepancy in `mockup-review.md` has a recorded user decision
+- [x] 3.3 The user designed desktop (1440px) and mobile (390px) frames for login, register and shell + home on the spartan kit (style `nova`, theme `neutral`) and registered them
+- [x] 3.4 The agent read all six frames through Figma MCP and `mockup-review.md` covers each of them
+- [x] 3.5 Every discrepancy in `mockup-review.md` has a recorded user decision
 - [ ] 3.6 Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops
+- [ ] 3.7 Figma PAT rotated (new token with `file_content:read` + `file_metadata:read` only); Figma MCP still reads a frame
 
 ### Phase 4: Views on helm components, per mockup
 
@@ -530,7 +532,7 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 #### Automated
 
 - [ ] 5.1 Literal scan passes: `npm run lint:ui`
-- [ ] 5.2 Literal scan fails on a planted literal (temporarily add `class="bg-blue-500"` to a view, expect exit 1, revert)
+- [ ] 5.2 Literal scan fails on planted literals (temporarily add `class="bg-blue-500"`, then `class="w-[50%]"` to a view, expect exit 1 each time, revert)
 - [ ] 5.3 Literal scan fails on a planted dark variant (temporarily add `class="dark:bg-card"` to a view, expect exit 1, revert)
 - [ ] 5.4 Lint and tests pass: `npm run lint` and `npm test -- --watch=false`
 - [ ] 5.5 Production bundle has no kitchen sink: `npm run build`, then no `kitchen` match in `frontend/dist/` (Bash `grep -ri`)

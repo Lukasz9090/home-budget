@@ -1,7 +1,7 @@
 ---
 change_id: design-system
 title: Design system
-status: planned
+status: implementing
 created: 2026-11-13
 updated: 2026-11-15
 archived_at: null
