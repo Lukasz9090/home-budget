@@ -499,32 +499,32 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Automated
 
-- [x] 3.1 `context/design/mockups.md` has rows for `/login`, `/register` and `/`, each with a desktop and a mobile link containing `node-id=` (Bash `grep`)
-- [x] 3.2 `CLAUDE.md` contains `BRAK MAKIETY` and `BRAK DOSTĘPU DO MAKIETY` in a `## UI` section outside the `@przeprogramowani/10x-cli` markers
+- [x] 3.1 `context/design/mockups.md` has rows for `/login`, `/register` and `/`, each with a desktop and a mobile link containing `node-id=` (Bash `grep`) — f210a07
+- [x] 3.2 `CLAUDE.md` contains `BRAK MAKIETY` and `BRAK DOSTĘPU DO MAKIETY` in a `## UI` section outside the `@przeprogramowani/10x-cli` markers — f210a07
 
 #### Manual
 
 - [x] 3.3 The user designed desktop (1440px) and mobile (390px) frames for login, register and shell + home on the spartan kit (style `nova`, theme `neutral`) and registered them
 - [x] 3.4 The agent read all six frames through Figma MCP and `mockup-review.md` covers each of them
 - [x] 3.5 Every discrepancy in `mockup-review.md` has a recorded user decision
-- [x] 3.6 Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops
+- [x] 3.6 Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops — f210a07
 - [ ] 3.7 Figma PAT rotated (new token with `file_content:read` + `file_metadata:read` only); Figma MCP still reads a frame
 
 ### Phase 4: Views on helm components, per mockup
 
 #### Automated
 
-- [ ] 4.1 Production build passes: `npm run build`
-- [ ] 4.2 Unit tests pass, including the new login spinner test: `npm test -- --watch=false`
-- [ ] 4.3 Lint passes: `npm run lint`
-- [ ] 4.4 Hardcoded-value scan from `/10x-ui` on `src/app/**/*.{html,ts,css}` (excluding `*.spec.ts`) returns 0 hits
-- [ ] 4.5 `src/styles.css` contains none of `.btn`, `.field`, `.form-error`, `.auth-card` (Bash `grep`)
+- [x] 4.1 Production build passes: `npm run build`
+- [x] 4.2 Unit tests pass, including the new login spinner test: `npm test -- --watch=false`
+- [x] 4.3 Lint passes: `npm run lint`
+- [x] 4.4 Hardcoded-value scan from `/10x-ui` on `src/app/**/*.{html,ts,css}` (excluding `*.spec.ts`) returns 0 hits
+- [x] 4.5 `src/styles.css` contains none of `.btn`, `.field`, `.form-error`, `.auth-card` (Bash `grep`)
 
 #### Manual
 
-- [ ] 4.6 Login, register and shell + home match their mockup frames at 1440px and 390px; every visible difference is one recorded in `mockup-review.md`
-- [ ] 4.7 Login and register: field error, server error alert and disabled/pending submit work; Tab order and focus ring visible on every control
-- [ ] 4.8 Logged-in shell: logout works; e-mail truncates on mobile
+- [x] 4.6 Login, register and shell + home match their mockup frames at 1440px and 390px; every visible difference is one recorded in `mockup-review.md`
+- [x] 4.7 Login and register: field error, server error alert and disabled/pending submit work; Tab order and focus ring visible on every control
+- [x] 4.8 Logged-in shell: logout works; e-mail truncates on mobile
 - [ ] 4.9 Screenshots of login, register (with a field error) and shell at 1440px and 390px saved to `context/changes/design-system/screenshots/phase4-*`
 
 ### Phase 5: States and guard

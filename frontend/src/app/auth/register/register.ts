@@ -1,15 +1,32 @@
 import { Component, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { HlmAlertImports } from '@spartan-ng/helm/alert';
+import { HlmButtonImports } from '@spartan-ng/helm/button';
+import { HlmCardImports } from '@spartan-ng/helm/card';
+import { HlmFieldImports } from '@spartan-ng/helm/field';
+import { HlmInputImports } from '@spartan-ng/helm/input';
+import { HlmLabelImports } from '@spartan-ng/helm/label';
+import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
 
 import { authErrorMessage, safeReturnUrl } from '../auth-helpers';
 import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-register',
-  imports: [ReactiveFormsModule, RouterLink],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    HlmAlertImports,
+    HlmButtonImports,
+    HlmCardImports,
+    HlmFieldImports,
+    HlmInputImports,
+    HlmLabelImports,
+    HlmSpinnerImports,
+  ],
   templateUrl: './register.html',
-  styleUrl: './register.css',
+  host: { class: 'block' },
 })
 export class Register {
   private readonly auth = inject(AuthService);
