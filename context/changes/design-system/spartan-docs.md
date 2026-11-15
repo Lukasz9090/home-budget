@@ -15,14 +15,16 @@ Kod w przykładach jest dosłowny ze źródeł; uwagi „U nas” dotyczą tego 
 
 ### 1.1 Tailwind CSS v4 (wymagany)
 
-Spartan wymaga Tailwind v4. Instalacja wg framework guide Tailwinda dla Angulara
-(`--force`, bo Angular ma peer dependency na Tailwind v3):
+Spartan wymaga Tailwind v4. U nas instalujemy go schematem Angulara (bez `--force` —
+Angular 21 nie ma już konfliktu peer dependency z Tailwind v4):
 
 ```bash
-npm install tailwindcss @tailwindcss/postcss postcss --force
+npx ng add tailwindcss --skip-confirmation
 ```
 
-`frontend/.postcssrc.json`:
+Schemat dodaje `tailwindcss`, `@tailwindcss/postcss`, `postcss`, tworzy `.postcssrc.json` i dopisuje
+`@import 'tailwindcss';` do `styles.css` (na końcu pliku — przenieść na górę; `init` i tak
+zastępuje go importami z §1.2). `frontend/.postcssrc.json`:
 
 ```json
 { "plugins": { "@tailwindcss/postcss": {} } }
@@ -49,15 +51,21 @@ Preset zawiera już `tw-animate-css` i `@angular/cdk/overlay-prebuilt.css` — n
 ### 1.3 CLI
 
 ```bash
-npm i -D @spartan-ng/cli
-ng g @spartan-ng/cli:init                  # wybór stylu (zapis do components.json), zależności
-ng g @spartan-ng/cli:ui-theme              # app, entry stylów, motyw, radius — raz na projekt
+npm i -D @spartan-ng/cli@1.9.0
+ng g @spartan-ng/cli:init --theme=neutral  # zależności + importy i motyw w styles.css
 ng g @spartan-ng/cli:ui button             # dodanie komponentu (bez nazwy: lista; `all`)
 ng g @spartan-ng/cli:info --json           # zainstalowane komponenty, ścieżki, wersje
 ng g @spartan-ng/cli:healthcheck           # skan przestarzałych wzorców; --autoFix naprawia
 ```
 
-### 1.4 `components.json` (root projektu, tworzony przy pierwszym `ui`)
+- `init` **już generuje motyw** (importy z §1.2 + blok `:root`/`:root.dark` w `styles.css`) —
+  **nie uruchamiać** potem `ui-theme`, bo dopisze drugi, zduplikowany blok `:root`.
+- `init --theme=<gray|neutral|slate|stone|zinc>` działa nieinteraktywnie (bez promptów).
+- `init` w 1.9.0 nie dodaje `clsx` ani `@ng-icons/core`/`@ng-icons/lucide` — doinstalować ręcznie
+  (`@ng-icons/*` w wersji `>=32 <34`; nowsze wymagają Angular ≥22).
+- Generatory zapisują cache Nx devkit w `.nx/` — jest w `.gitignore`.
+
+### 1.4 `components.json` (root projektu — musi istnieć przed pierwszym `ui`)
 
 Wariant Angular CLI (bez flag Nx):
 
@@ -69,7 +77,11 @@ Wariant Angular CLI (bez flag Nx):
 }
 ```
 
-- `componentsPath` — gdzie CLI kopiuje pliki helm (decyzja do planu: np. `src/app/shared/ui`).
+- Plik **musi istnieć (z polem `style`) przed pierwszym `ui`** — bez niego `ui` pyta o styl albo
+  przyjmuje domyślny `vega`. U nas: `componentsPath: "libs/ui"`, `style: "nova"`.
+- `ui` sam dopisuje alias do `tsconfig.json` (`paths`: `@spartan-ng/helm/<komponent>`) i ścieżkę
+  `libs/ui/**/src/**/*.ts` do `include` w `tsconfig.app.json`.
+- `componentsPath` — gdzie CLI kopiuje pliki helm.
 - `importAlias` — alias w `tsconfig` (`@spartan-ng/helm/<komponent>`).
 - `style` — wygląd komponentów. Po zmianie stylu trzeba wygenerować komponent ponownie
   (`ng g @spartan-ng/cli:ui button`). Styl musi zgadzać się z wybranym w kicie Figma.
@@ -256,15 +268,29 @@ pokazywane gdy kontrolka jest invalid i touched/dirty.
 
 ### 5.1 Reactive Forms — **u nas** (`login.ts`, `register.ts` używają `NonNullableFormBuilder`)
 
+`<hlm-field-error>` sam się pokazuje, gdy kontrolka jest `invalid && touched` — **bez**
+owijającego `@if`. Na submit wywołać `form.markAllAsTouched()` (formularz z `[formGroup]`),
+żeby błędy pojawiły się także dla nietkniętych pól.
+
 ```html
-<div hlmField>
-  <label hlmFieldLabel for="email">Email</label>
-  <input hlmInput id="email" [formControl]="email" />
-  <p hlmFieldDescription>We'll never share your email.</p>
-  @if (email.invalid && email.touched) {
-  <hlm-field-error>Enter a valid email address.</hlm-field-error>
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <div hlmField>
+    <label hlmFieldLabel for="email">Email</label>
+    <input hlmInput id="email" formControlName="email" />
+    <p hlmFieldDescription>We'll never share your email.</p>
+    <hlm-field-error>Enter a valid email address.</hlm-field-error>
+  </div>
+</form>
+```
+
+```ts
+submit(): void {
+  if (this.form.invalid) {
+    this.form.markAllAsTouched();
+    return;
   }
-</div>
+  // ...
+}
 ```
 
 ### 5.2 Signal Forms (alternatywa)
@@ -486,7 +512,7 @@ Oparta o TanStack Table (`ColumnDef`, `*flexRender`), stary `brn-column-def` jes
 | Kontenery | `card`, `separator`, `resizable`, `scroll-area`, `accordion`, `collapsible`, `aspect-ratio` |
 | Pusty stan | `empty` |
 | Daty | `calendar`, `date-picker` |
-| Ikony | `icon` (`@ng-icons`) |
+| Ikony | `@ng-icons` bezpośrednio (`NgIcon` + `provideIcons`, §6.3) — w 1.9.0 nie ma komponentu `icon` |
 | Typografia | `typography` |
 
 Zamiast własnego markupu: komunikaty → `hlmAlert` (`hlmAlertTitle`/`hlmAlertDescription`),

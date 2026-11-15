@@ -8,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
   selector: 'app-shell',
   imports: [RouterOutlet],
   templateUrl: './shell.html',
-  styleUrl: './shell.scss',
+  styleUrl: './shell.css',
 })
 export class Shell {
   private readonly auth = inject(AuthService);
