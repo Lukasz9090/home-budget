@@ -9,6 +9,17 @@ Envelope-budgeting web app. Two independent projects, no monorepo tooling:
 - Target deploy: Angular build is bundled into Spring's static resources and shipped as one container to Vercel (`Dockerfile.vercel`, Hobby plan, region `fra1`); Postgres is Neon free tier (`aws-eu-central-1`). Keep API routes under a prefix (e.g. `/api`) so they don't collide with SPA routes. Details and risks: `context/foundation/infrastructure.md`.
 - Do not edit anything between the `@przeprogramowani/10x-cli` BEGIN/END markers below — the CLI regenerates it.
 
+## UI
+
+Mockups (registry: `context/design/mockups.md`):
+- Any work that creates a screen or changes how a screen looks (new view, layout, restyle, `/10x-ui`) starts by looking the route up in `context/design/mockups.md` — in planning and in implementation alike.
+- No row, or no desktop or no mobile link → stop and report `BRAK MAKIETY: <ekran> (<trasa>)`. Do not build from a description, a similar screen or a guess.
+- Figma MCP not configured, failing or over quota → stop and report `BRAK DOSTĘPU DO MAKIETY: <ekran> — <powód>`. Never continue from memory.
+- Undrawn states (empty, error, loading, focus, disabled) are built from kitchen-sink components and listed as "bez makiety" in the plan; they are not an error.
+- Discrepancies — a colour outside the tokens, an element with no counterpart in `frontend/libs/ui`, copy or behaviour that differs from the current code/PRD — are reported and asked about, never resolved silently (no invented token, no silent deviation from the mockup).
+- Read each frame once and deposit what it shows in the change folder (Figma API quota).
+- Exempt: `/dev/*` routes and changes with no visual effect (logic, tests).
+
 <!-- BEGIN @przeprogramowani/10x-cli -->
 
 ## 10xDevs AI Toolkit - Module 2, Lesson 5 (10xDevs 4.0 UI)
