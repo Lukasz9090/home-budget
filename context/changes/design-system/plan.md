@@ -485,29 +485,29 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Automated
 
-- [x] 2.1 Production build passes: `npm run build`
-- [x] 2.2 Unit tests pass: `npm test -- --watch=false`
-- [x] 2.3 No `--color-` custom properties or `--focus-ring` remain in `src/styles.css` and `src/app/**` (Bash `grep`)
-- [x] 2.4 Hardcoded-value scan from `/10x-ui` on the view files (`login.html`, `register.html`, `shell.html`, `shell.css`, `home.ts`) returns 0 hits
+- [x] 2.1 Production build passes: `npm run build` — db46fe5
+- [x] 2.2 Unit tests pass: `npm test -- --watch=false` — db46fe5
+- [x] 2.3 No `--color-` custom properties or `--focus-ring` remain in `src/styles.css` and `src/app/**` (Bash `grep`) — db46fe5
+- [x] 2.4 Hardcoded-value scan from `/10x-ui` on the view files (`login.html`, `register.html`, `shell.html`, `shell.css`, `home.ts`) returns 0 hits — db46fe5
 
 #### Manual
 
-- [x] 2.5 Login, register and shell render in the neutral palette (near-black primary button, neutral grey borders) with readable contrast and visible keyboard focus on inputs and buttons
+- [x] 2.5 Login, register and shell render in the neutral palette (near-black primary button, neutral grey borders) with readable contrast and visible keyboard focus on inputs and buttons — db46fe5
 - [ ] 2.6 Screenshots of login at desktop (1440px) and mobile (390px) saved to `context/changes/design-system/screenshots/phase2-*`
 
 ### Phase 3: Mockup gate
 
 #### Automated
 
-- [ ] 3.1 `context/design/mockups.md` has rows for `/login`, `/register` and `/`, each with a desktop and a mobile link containing `node-id=` (Bash `grep`)
-- [ ] 3.2 `CLAUDE.md` contains `BRAK MAKIETY` and `BRAK DOSTĘPU DO MAKIETY` in a `## UI` section outside the `@przeprogramowani/10x-cli` markers
+- [x] 3.1 `context/design/mockups.md` has rows for `/login`, `/register` and `/`, each with a desktop and a mobile link containing `node-id=` (Bash `grep`)
+- [x] 3.2 `CLAUDE.md` contains `BRAK MAKIETY` and `BRAK DOSTĘPU DO MAKIETY` in a `## UI` section outside the `@przeprogramowani/10x-cli` markers
 
 #### Manual
 
 - [x] 3.3 The user designed desktop (1440px) and mobile (390px) frames for login, register and shell + home on the spartan kit (style `nova`, theme `neutral`) and registered them
 - [x] 3.4 The agent read all six frames through Figma MCP and `mockup-review.md` covers each of them
 - [x] 3.5 Every discrepancy in `mockup-review.md` has a recorded user decision
-- [ ] 3.6 Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops
+- [x] 3.6 Negative check: asked to plan a view for a route that is not in the registry, the agent answers `BRAK MAKIETY: …` and stops
 - [ ] 3.7 Figma PAT rotated (new token with `file_content:read` + `file_metadata:read` only); Figma MCP still reads a frame
 
 ### Phase 4: Views on helm components, per mockup
