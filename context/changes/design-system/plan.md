@@ -470,29 +470,29 @@ The old tokens `--color-*`, `--focus-ring` and the global classes are removed ou
 
 #### Automated
 
-- [x] 1.1 Clean install succeeds and leaves no extraneous packages: `npm ci && npm ls --depth=0` (in `frontend/`)
-- [x] 1.2 Production build passes: `npm run build`
-- [x] 1.3 Unit tests pass: `npm test -- --watch=false`
-- [x] 1.4 Lint passes: `npm run lint`
-- [x] 1.5 No `.scss` files remain under `frontend/src`
-- [x] 1.6 `styles.css` contains exactly one generated `:root` theme block (no duplicate from `ui-theme`)
+- [x] 1.1 Clean install succeeds and leaves no extraneous packages: `npm ci && npm ls --depth=0` (in `frontend/`) — 301b611
+- [x] 1.2 Production build passes: `npm run build` — 301b611
+- [x] 1.3 Unit tests pass: `npm test -- --watch=false` — 301b611
+- [x] 1.4 Lint passes: `npm run lint` — 301b611
+- [x] 1.5 No `.scss` files remain under `frontend/src` — 301b611
+- [x] 1.6 `styles.css` contains exactly one generated `:root` theme block (no duplicate from `ui-theme`) — 301b611
 
 #### Manual
 
-- [x] 1.7 Login, register and the logged-in shell keep the same layout and colours as before the phase (ng serve); known Tailwind preflight differences (headings no longer bold, links without underline) are accepted until Phase 4
+- [x] 1.7 Login, register and the logged-in shell keep the same layout and colours as before the phase (ng serve); known Tailwind preflight differences (headings no longer bold, links without underline) are accepted until Phase 4 — 301b611
 
 ### Phase 2: Tokens — one source of values
 
 #### Automated
 
-- [ ] 2.1 Production build passes: `npm run build`
-- [ ] 2.2 Unit tests pass: `npm test -- --watch=false`
-- [ ] 2.3 No `--color-` custom properties or `--focus-ring` remain in `src/styles.css` and `src/app/**` (Bash `grep`)
-- [ ] 2.4 Hardcoded-value scan from `/10x-ui` on the view files (`login.html`, `register.html`, `shell.html`, `shell.css`, `home.ts`) returns 0 hits
+- [x] 2.1 Production build passes: `npm run build`
+- [x] 2.2 Unit tests pass: `npm test -- --watch=false`
+- [x] 2.3 No `--color-` custom properties or `--focus-ring` remain in `src/styles.css` and `src/app/**` (Bash `grep`)
+- [x] 2.4 Hardcoded-value scan from `/10x-ui` on the view files (`login.html`, `register.html`, `shell.html`, `shell.css`, `home.ts`) returns 0 hits
 
 #### Manual
 
-- [ ] 2.5 Login, register and shell render in the neutral palette (near-black primary button, neutral grey borders) with readable contrast and visible keyboard focus on inputs and buttons
+- [x] 2.5 Login, register and shell render in the neutral palette (near-black primary button, neutral grey borders) with readable contrast and visible keyboard focus on inputs and buttons
 - [ ] 2.6 Screenshots of login at desktop (1440px) and mobile (390px) saved to `context/changes/design-system/screenshots/phase2-*`
 
 ### Phase 3: Mockup gate

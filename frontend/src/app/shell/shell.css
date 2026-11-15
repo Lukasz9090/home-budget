@@ -10,14 +10,14 @@
   justify-content: space-between;
   gap: 0.75rem;
   padding: 0.75rem 1rem;
-  background: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
 }
 
 .shell-brand {
   font-weight: 700;
   font-size: 1.125rem;
-  color: var(--color-primary);
+  color: var(--primary);
 }
 
 .shell-account {
@@ -31,7 +31,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: var(--color-muted);
+  color: var(--muted-foreground);
   font-size: 0.875rem;
 }
 
