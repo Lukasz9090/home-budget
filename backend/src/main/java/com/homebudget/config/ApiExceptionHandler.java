@@ -1,6 +1,7 @@
 package com.homebudget.config;
 
 import com.homebudget.account.EmailAlreadyTakenException;
+import com.homebudget.category.CategoryNameTakenException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import org.jspecify.annotations.Nullable;
@@ -39,6 +40,11 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(EmailAlreadyTakenException.class)
     ProblemDetail emailAlreadyTaken(EmailAlreadyTakenException ex) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
+    }
+
+    @ExceptionHandler(CategoryNameTakenException.class)
+    ProblemDetail categoryNameTaken(CategoryNameTakenException ex) {
         return ProblemDetail.forStatusAndDetail(HttpStatus.CONFLICT, ex.getMessage());
     }
 
