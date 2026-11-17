@@ -1,12 +1,16 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink } from '@angular/router';
 import { HlmAlertImports } from '@spartan-ng/helm/alert';
+import { HlmBadgeImports } from '@spartan-ng/helm/badge';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { HlmCardImports } from '@spartan-ng/helm/card';
 import { HlmFieldImports } from '@spartan-ng/helm/field';
 import { HlmInputImports } from '@spartan-ng/helm/input';
+import { HlmItemImports } from '@spartan-ng/helm/item';
 import { HlmLabelImports } from '@spartan-ng/helm/label';
+import { HlmRadioGroupImports } from '@spartan-ng/helm/radio-group';
 import { HlmSeparatorImports } from '@spartan-ng/helm/separator';
 import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
 
@@ -19,12 +23,16 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
   selector: 'app-kitchen-sink',
   imports: [
     ReactiveFormsModule,
+    RouterLink,
     HlmAlertImports,
+    HlmBadgeImports,
     HlmButtonImports,
     HlmCardImports,
     HlmFieldImports,
     HlmInputImports,
+    HlmItemImports,
     HlmLabelImports,
+    HlmRadioGroupImports,
     HlmSeparatorImports,
     HlmSpinnerImports,
   ],
@@ -65,6 +73,66 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
         </div>
         <p class="text-sm text-muted-foreground">Separator:</p>
         <hlm-separator />
+        <div class="flex flex-wrap items-center gap-2">
+          <span hlmBadge variant="secondary">Przepływowa</span>
+          <span hlmBadge variant="outline">Narastająca</span>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <fieldset hlmFieldSet>
+            <legend hlmFieldLegend variant="label">Typ</legend>
+            <hlm-radio-group [formControl]="kindControl">
+              <div hlmField orientation="horizontal">
+                <hlm-radio
+                  value="FLOW"
+                  inputId="ks-default-flow"
+                  aria-describedby="ks-default-flow-hint"
+                >
+                  <hlm-radio-indicator indicator />
+                </hlm-radio>
+                <div hlmFieldContent>
+                  <label hlmFieldLabel for="ks-default-flow">Przepływowa</label>
+                  <p hlmFieldDescription id="ks-default-flow-hint">
+                    Na bieżący miesiąc. Co niewydane, nie przechodzi dalej.
+                  </p>
+                </div>
+              </div>
+              <div hlmField orientation="horizontal">
+                <hlm-radio
+                  value="ACCUMULATING"
+                  inputId="ks-default-accumulating"
+                  aria-describedby="ks-default-accumulating-hint"
+                >
+                  <hlm-radio-indicator indicator />
+                </hlm-radio>
+                <div hlmFieldContent>
+                  <label hlmFieldLabel for="ks-default-accumulating">Narastająca</label>
+                  <p hlmFieldDescription id="ks-default-accumulating-hint">
+                    Zbiera się z miesiąca na miesiąc, aż ją wydasz.
+                  </p>
+                </div>
+              </div>
+            </hlm-radio-group>
+          </fieldset>
+          <div hlmItemGroup>
+            <div hlmItem size="xs">
+              <div hlmItemContent>
+                <span hlmItemTitle>Jedzenie na mieście</span>
+              </div>
+              <div hlmItemActions>
+                <span hlmBadge variant="secondary">Przepływowa</span>
+              </div>
+            </div>
+            <hlm-item-separator />
+            <div hlmItem size="xs">
+              <div hlmItemContent>
+                <span hlmItemTitle>Wakacje</span>
+              </div>
+              <div hlmItemActions>
+                <span hlmBadge variant="outline">Narastająca</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="flex flex-col gap-4" aria-labelledby="ks-interactive">
@@ -85,6 +153,23 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
           <label hlmLabel for="ks-focus-input">Pole</label>
           <input hlmInput id="ks-focus-input" type="text" />
         </div>
+        <fieldset hlmFieldSet class="md:max-w-sm">
+          <legend hlmFieldLegend variant="label">Radio (strzałki zmieniają wybór)</legend>
+          <hlm-radio-group [formControl]="focusKindControl">
+            <div hlmField orientation="horizontal">
+              <hlm-radio value="FLOW" inputId="ks-focus-flow">
+                <hlm-radio-indicator indicator />
+              </hlm-radio>
+              <label hlmFieldLabel for="ks-focus-flow">Przepływowa</label>
+            </div>
+            <div hlmField orientation="horizontal">
+              <hlm-radio value="ACCUMULATING" inputId="ks-focus-accumulating">
+                <hlm-radio-indicator indicator />
+              </hlm-radio>
+              <label hlmFieldLabel for="ks-focus-accumulating">Narastająca</label>
+            </div>
+          </hlm-radio-group>
+        </fieldset>
       </section>
 
       <section class="flex flex-col gap-4" aria-labelledby="ks-disabled">
@@ -95,6 +180,23 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
             <label hlmLabel for="ks-disabled-input">Pole wyłączone</label>
             <input hlmInput id="ks-disabled-input" type="text" disabled />
           </div>
+          <fieldset hlmFieldSet class="md:max-w-sm">
+            <legend hlmFieldLegend variant="label">Radio z wyłączoną opcją</legend>
+            <hlm-radio-group [formControl]="disabledKindControl">
+              <div hlmField orientation="horizontal">
+                <hlm-radio value="FLOW" inputId="ks-disabled-flow">
+                  <hlm-radio-indicator indicator />
+                </hlm-radio>
+                <label hlmFieldLabel for="ks-disabled-flow">Przepływowa</label>
+              </div>
+              <div hlmField orientation="horizontal">
+                <hlm-radio value="ACCUMULATING" inputId="ks-disabled-accumulating" disabled>
+                  <hlm-radio-indicator indicator />
+                </hlm-radio>
+                <label hlmFieldLabel for="ks-disabled-accumulating">Narastająca</label>
+              </div>
+            </hlm-radio-group>
+          </fieldset>
         </div>
       </section>
 
@@ -123,7 +225,8 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
       <section class="flex flex-col gap-4" aria-labelledby="ks-empty">
         <h2 id="ks-empty" class="text-lg font-semibold">empty</h2>
         <p class="text-sm text-muted-foreground">
-          N/A: brak widoku z danymi w tej zmianie; S-02 dodaje komponent <code>empty</code>.
+          Pusty stan S-02 to Card według makiety (nie komponent <code>empty</code>) — zobacz
+          <a hlmBtn variant="link" class="h-auto p-0" routerLink="/categories">/categories</a>.
         </p>
       </section>
     </main>
@@ -137,6 +240,9 @@ export class KitchenSink {
     nonNullable: true,
     validators: [Validators.required],
   });
+  protected readonly kindControl = new FormControl('FLOW', { nonNullable: true });
+  protected readonly focusKindControl = new FormControl('FLOW', { nonNullable: true });
+  protected readonly disabledKindControl = new FormControl('FLOW', { nonNullable: true });
 
   constructor() {
     this.invalidControl.markAsTouched();

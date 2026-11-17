@@ -304,25 +304,25 @@ None. The list is small and loaded once per visit. Creating merges locally witho
 
 #### Automated
 
-- [x] 1.1 Backend tests pass (incl. new category tests): `cd backend && ./mvnw test`
-- [x] 1.2 Formatting is clean: `cd backend && ./mvnw spotless:check`
+- [x] 1.1 Backend tests pass (incl. new category tests): `cd backend && ./mvnw test` — a076fa0
+- [x] 1.2 Formatting is clean: `cd backend && ./mvnw spotless:check` — a076fa0
 
 #### Manual
 
-- [x] 1.3 With the app running against local Postgres, `V3` applies on startup and `\d categories` shows the unique index `categories_owner_name_uk` on `(owner_id, lower(name))`
+- [x] 1.3 With the app running against local Postgres, `V3` applies on startup and `\d categories` shows the unique index `categories_owner_name_uk` on `(owner_id, lower(name))` — a076fa0
 
 ### Phase 2: UI kit — badge, radio-group, item
 
 #### Automated
 
-- [ ] 2.1 Build passes: `cd frontend && npm run build`
-- [ ] 2.2 Tests pass: `cd frontend && npm test -- --watch=false`
-- [ ] 2.3 Lint passes: `cd frontend && npm run lint`
-- [ ] 2.4 UI literal guard passes: `cd frontend && npm run lint:ui`
+- [x] 2.1 Build passes: `cd frontend && npm run build`
+- [x] 2.2 Tests pass: `cd frontend && npm test -- --watch=false`
+- [x] 2.3 Lint passes: `cd frontend && npm run lint`
+- [x] 2.4 UI literal guard passes: `cd frontend && npm run lint:ui`
 
 #### Manual
 
-- [ ] 2.5 `/dev/kitchen-sink` (via `ng serve`) shows Badge, Radio Group and Item in light and dark preview, and the radio group is keyboard-operable (arrows switch, focus ring visible)
+- [x] 2.5 `/dev/kitchen-sink` (via `ng serve`) shows Badge, Radio Group and Item in light and dark preview, and the radio group is keyboard-operable (arrows switch, focus ring visible)
 
 ### Phase 3: Kategorie screen and shell navigation
 
