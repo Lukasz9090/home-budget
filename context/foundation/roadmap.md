@@ -3,7 +3,7 @@ project: PennyPlan
 version: 1
 status: draft
 created: 2026-09-29
-updated: 2026-10-02
+updated: 2026-11-17
 prd_version: 1
 main_goal: speed
 top_blocker: time
@@ -42,7 +42,7 @@ Osoba prowadząca budżet metodą kopertową dzieli dziś każdy dochód procent
 | ID   | Change ID                   | Outcome (user can …)                                                                 | Prerequisites | PRD refs                                    | Status   |
 | ---- | --------------------------- | ------------------------------------------------------------------------------------ | ------------- | ------------------------------------------- | -------- |
 | S-01 | account-signup-and-login    | założyć konto, zalogować się, wylogować i wrócić po miesiącu bez ponownego logowania | —             | FR-001, FR-002                              | in-progress |
-| S-02 | first-categories            | zdefiniować własne kategorie przepływowe i narastające, z pustym stanem z przykładami | S-01          | FR-003, FR-004, FR-017                      | proposed |
+| S-02 | first-categories            | zdefiniować własne kategorie przepływowe i narastające, z pustym stanem z przykładami | S-01          | FR-003, FR-004, FR-017                      | in-progress |
 | S-03 | month-income-split          | dodać miesiąc, wpisać dochód własnego typu i rozdzielić go procentowo z korektą kwot | S-02          | US-01, FR-008, FR-010, FR-011, FR-012, FR-013 | proposed |
 | S-04 | rolling-split-suggestion    | dostać procenty podpowiedziane z ostatniego użycia danego typu dochodu               | S-03          | US-01, FR-009                               | proposed |
 | S-05 | cumulative-pools-panel      | zobaczyć panel sum narastających per kategoria i zawęzić go filtrem okresu           | S-03          | US-01, FR-014                               | proposed |
@@ -101,7 +101,7 @@ Brak osobnych fundamentów. Deploy jest gotowy, a pozostałe warstwy (auth, dane
 - **Blockers:** —
 - **Unknowns:** —
 - **Risk:** Rozróżnienie przepływowa/narastająca jest rdzeniem mechaniki pul; ustalone tu decyduje o tym, jak S-05 i S-06 liczą salda.
-- **Status:** proposed
+- **Status:** in-progress
 
 ### S-03: Miesiąc i podział dochodu
 

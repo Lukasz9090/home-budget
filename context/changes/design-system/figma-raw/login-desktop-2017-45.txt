@@ -1,0 +1,238 @@
+# Raw Framelink MCP output: get_figma_data(fileKey=QMx4nvFcQC9mpTjJCWPwuS, nodeId=2017:45)
+# Frame: "Logowanie · desktop /login". Read 2026-11-16 (figma-developer-mcp@0.13.2). Digest: ../mockup-review.md
+NAME: "Spartan UI for Figma: a 1:1 design kit of Spartan NG (Community)"
+
+GLOBAL_VARS:
+fill_658ab2fa:
+  - '#FFFFFF'
+layout_56d3c81c:
+  mode: none
+  sizing:
+    horizontal: fill
+    vertical: hug
+text-xl/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 20
+  lineHeight: 28px
+  textAlignHorizontal: CENTER
+  textAlignVertical: TOP
+fill_0dc61961:
+  - '#0A0A0A'
+elevation/card:
+  boxShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)
+text-2xl/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 24
+  lineHeight: 32px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_94093457:
+  mode: column
+  alignSelf: stretch
+  alignItems: stretch
+  gap: 20px
+  sizing:
+    horizontal: fill
+    vertical: hug
+layout_b6415522:
+  mode: column
+  alignSelf: stretch
+  gap: 8px
+  sizing:
+    horizontal: fill
+    vertical: hug
+style_e069ac9d:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 19.25px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_75800f08:
+  - rgba(255, 255, 255, 0)
+elevation/control:
+  boxShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)
+layout_8ef2053d:
+  mode: row
+  alignSelf: stretch
+  padding: 0px 10px
+  justifyContent: center
+  alignItems: center
+  gap: 6px
+  sizing:
+    horizontal: fill
+    vertical: fixed
+  dimensions:
+    height: 32
+fill_d6eab79f:
+  - '#171717'
+layout_177c5efc:
+  mode: none
+  sizing:
+    horizontal: hug
+    vertical: hug
+style_c063976c:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+
+ELEMENTS:
+EL-fc080521:
+  type: SLOT
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-73313a0e:
+  type: INSTANCE
+  layout:
+    mode: row
+    alignSelf: stretch
+    padding: 4px 10px
+    alignItems: center
+    sizing:
+      horizontal: fill
+      vertical: fixed
+    dimensions:
+      height: 32
+  fills: fill_75800f08
+  strokes:
+    - '#E5E5E5'
+  strokeWeight: 1px
+  effects: elevation/control
+  borderRadius: 10px
+  componentId: 30:6
+  componentProperties:
+    Value: hello@spartan.ng
+    Placeholder: ''
+EL-372dafbd:
+  type: TEXT
+  layout: layout_56d3c81c
+  textStyle:
+    fontFamily: Geist
+    fontStyle: Regular
+    fontWeight: 400
+    fontSize: 14
+    lineHeight: 20px
+    textAlignHorizontal: LEFT
+    textAlignVertical: TOP
+  fills:
+    - '#737373'
+  componentPropertyReferences:
+    text: Placeholder
+
+COMPONENTS:
+59:25:
+  id: 59:25
+  key: 7b23c55b129576976fae53bc4e5eaceb150cabb0
+  name: Size=default, With Footer=false
+  componentSetId: 59:62
+21:46:
+  id: 21:46
+  key: 471b69d83ccaa051d3607356d5fe7d3b94cf68d0
+  name: Variant=link, Size=default, State=default, Icon=none
+  componentSetId: 21:969
+107:587:
+  id: 107:587
+  key: 224f73e747c791fc695959ae6d14a79a8e73b720
+  name: Field Group
+36:6:
+  id: 36:6
+  key: 19c30f7ae99037df9e3de1d0e0ac83caa44140c6
+  name: Orientation=vertical, State=default
+  componentSetId: 36:60
+30:6:
+  id: 30:6
+  key: 1ff304343611813635c2ae7c9454be0466cec6d0
+  name: State=default, Content=placeholder
+  componentSetId: 30:25
+21:6:
+  id: 21:6
+  key: e2e0d51b6055c0b6bbf7fd454b26c9c3fbd1cef4
+  name: Variant=default, Size=default, State=default, Icon=none
+  componentSetId: 21:969
+
+COMPONENT_SETS:
+59:62:
+  id: 59:62
+  key: 5b119b6cc2519b377f657054c9955acd0c3d186e
+  name: Card
+  description: |-
+    Spartan NG · HlmCard — [hlmCard]
+    import { HlmCardImports } from '@spartan-ng/helm/card'
+    Figma→Angular: Action→<ng-content> · Content→<ng-content> · Footer→<ng-content> · Title→text · Description→text · Show Header→@if · Show Description→@if · Show Action→@if · Size→[size] · With Footer→@if
+    https://www.spartan.ng/components/card
+
+    When to use: Groups related content and actions. Compose Header, Title, Description, Content and Footer instead of styling a bare container. Size=sm for dense grids. Use Item for list rows, Alert for messages.
+21:969:
+  id: 21:969
+  key: dc3b7eaddc6be5b7e8ddc03cb4271df7d760d831
+  name: Button
+  description: |-
+    Spartan NG · HlmButton — button[hlmBtn]
+    import { HlmButtonImports } from '@spartan-ng/helm/button'
+    Figma→Angular: Label→text · Swap Icon→<ng-icon> · Variant→[variant] · Size→[size] · State→CSS/aria+[disabled] · Icon→icon position (start/end)
+    https://www.spartan.ng/components/button
+
+    When to use: One Variant=default (primary) per view for the main action; outline or secondary for supporting actions; ghost for toolbars and low-emphasis actions; destructive only for irreversible actions, ideally behind an Alert Dialog; link for inline navigation. Use the Variant and Size inputs instead of restyling. There is no loading input: put a Spinner in the button and disable it. Icon-only buttons need an aria-label.
+36:60:
+  id: 36:60
+  key: 6d7e484b2974a67f910ea5a809f8ac37a652622e
+  name: Field
+  description: |-
+    Spartan NG · HlmField — [hlmField]
+    import { HlmFieldImports } from '@spartan-ng/helm/field'
+    Figma→Angular: Control→<ng-content> · Label→text · Description→text · Show Description→@if · Error→text · Show Error→@if · Orientation→[orientation] · State→CSS/aria+[disabled]
+    https://www.spartan.ng/components/field
+
+    When to use: Wrap every control in Field (Label, control, description, error). Orientation=vertical by default, horizontal for switches and checkboxes. Put related checkboxes or radios in a Field Set with a legend. Show the error only when the control is invalid and touched.
+30:25:
+  id: 30:25
+  key: 88c21a2c704824d9678b1d16a53a8673623e180d
+  name: Input
+  description: |-
+    Spartan NG · HlmInput — [hlmInput]
+    import { HlmInputImports } from '@spartan-ng/helm/input'
+    Figma→Angular: Placeholder→placeholder attr · Value→text · State→CSS/aria+[disabled] · Content→placeholder vs value
+    https://www.spartan.ng/components/input
+
+    When to use: Single-line text. Use Textarea for multi-line, Select or Combobox to choose from a list, Input OTP for codes. Put it in a Field with a Label; State=invalid only together with an error message.
+
+NODES:
+[FRAME] "Logowanie · desktop /login" #2017:45 layout={"mode":"column","alignItems":"stretch","sizing":{"horizontal":"contextual","vertical":"contextual"},"designedWidth":"1440px","designedHeight":"900px"} fills=fill_658ab2fa strokes=["#000000"] strokeWeight=1px
+  [FRAME] "Obszar formularza" #2017:46 layout={"mode":"column","alignSelf":"stretch","justifyContent":"center","alignItems":"center","sizing":{"horizontal":"fill","vertical":"fill"}}
+    [FRAME] "Marka i formularz" #2017:57 layout={"mode":"column","alignItems":"stretch","gap":"24px","sizing":{"horizontal":"fixed","vertical":"hug"},"dimensions":{"width":400}}
+      [TEXT] #2017:58 layout=layout_56d3c81c fills=fill_0dc61961 textStyle=text-xl/semibold text="PennyPlan"
+      [INSTANCE] "Karta logowania" #2017:59 layout={"mode":"column","alignSelf":"stretch","padding":"16px 0px","gap":"16px","sizing":{"horizontal":"fill","vertical":"hug"}} fills=fill_658ab2fa strokes=["rgba(10, 10, 10, 0.1)"] strokeWeight=1px effects=elevation/card borderRadius=14px componentId=59:25 componentProperties={"Show Description":false,"Title":"Card Title","Show Action":false,"Show Header":false,"Description":"Card Description"}
+        [FRAME] "Card Content" #I2017:59;59:33 layout={"mode":"column","alignSelf":"stretch","padding":"0px 16px","alignItems":"stretch","sizing":{"horizontal":"fill","vertical":"hug"}}
+          [SLOT] "Content" #I2017:59;59:34 layout={"mode":"column","alignSelf":"stretch","alignItems":"stretch","gap":"16px","sizing":{"horizontal":"fill","vertical":"hug"}}
+            [FRAME] "Formularz" #I2017:59;59:34;2017:70 layout={"mode":"column","alignSelf":"stretch","alignItems":"stretch","gap":"24px","sizing":{"horizontal":"fill","vertical":"hug"}}
+              [TEXT] #I2017:59;59:34;2017:72 layout=layout_56d3c81c fills=fill_0dc61961 textStyle=text-2xl/semibold text="Zaloguj się"
+              [INSTANCE] "Pola formularza" #I2017:59;59:34;2017:101 layout=layout_94093457 componentId=107:587
+                [SLOT] "Fields" #I2017:59;59:34;2017:101;107:588 layout=layout_94093457 fills=fill_658ab2fa
+                  [INSTANCE] "E-mail" #I2017:59;59:34;2017:101;107:588;2017:111 layout=layout_b6415522 componentId=36:6 componentProperties={"Label":"E-mail","Error":"Enter a valid email address.","Show Description":false,"Show Error":false,"Description":""}
+                    [TEXT] #I2017:59;59:34;2017:101;107:588;2017:111;36:7 layout=layout_56d3c81c fills=fill_0dc61961 componentPropertyReferences={"text":"Label"} textStyle=style_e069ac9d text="E-mail"
+                    [SLOT] "Control" #I2017:59;59:34;2017:101;107:588;2017:111;36:10 template=EL-fc080521
+                      [INSTANCE] "Pole e-mail" #I2017:59;59:34;2017:101;107:588;2017:111;36:10;2017:115 template=EL-73313a0e
+                        [TEXT] #I2017:59;59:34;2017:101;107:588;2017:111;36:10;2017:115;30:7 template=EL-372dafbd
+                  [INSTANCE] "Hasło" #I2017:59;59:34;2017:101;107:588;2017:123 layout=layout_b6415522 componentId=36:6 componentProperties={"Label":"Hasło","Error":"Enter a valid email address.","Show Description":false,"Show Error":false,"Description":""}
+                    [TEXT] #I2017:59;59:34;2017:101;107:588;2017:123;36:7 layout=layout_56d3c81c fills=fill_0dc61961 componentPropertyReferences={"text":"Label"} textStyle=style_e069ac9d text="Hasło"
+                    [SLOT] "Control" #I2017:59;59:34;2017:101;107:588;2017:123;36:10 template=EL-fc080521
+                      [INSTANCE] "Pole hasła" #I2017:59;59:34;2017:101;107:588;2017:123;36:10;2017:127 template=EL-73313a0e
+                        [TEXT] #I2017:59;59:34;2017:101;107:588;2017:123;36:10;2017:127;30:7 template=EL-372dafbd
+              [INSTANCE] "Przycisk formularza" #I2017:59;59:34;2017:130 layout=layout_8ef2053d fills=fill_d6eab79f strokes=fill_75800f08 strokeWeight=1px borderRadius=10px componentId=21:6 componentProperties={"Label":"Zaloguj się"}
+                [TEXT] #I2017:59;59:34;2017:130;21:7 layout=layout_177c5efc fills=["#FAFAFA"] componentPropertyReferences={"text":"Label"} textStyle=style_c063976c text="Zaloguj się"
+      [INSTANCE] "Link konta" #2017:131 layout=layout_8ef2053d strokes=fill_75800f08 strokeWeight=1px borderRadius=10px componentId=21:46 componentProperties={"Label":"Nie masz konta? Załóż konto"}
+        [TEXT] #I2017:131;21:47 layout=layout_177c5efc fills=fill_d6eab79f componentPropertyReferences={"text":"Label"} textStyle=style_c063976c text="Nie masz konta? Załóż konto"
