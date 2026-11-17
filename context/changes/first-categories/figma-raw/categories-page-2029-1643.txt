@@ -1,0 +1,1727 @@
+NAME: "Spartan UI for Figma: a 1:1 design kit of Spartan NG (Community)"
+
+GLOBAL_VARS:
+fill_658ab2fa:
+  - '#FFFFFF'
+layout_177c5efc:
+  mode: none
+  sizing:
+    horizontal: hug
+    vertical: hug
+text-xl/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 20
+  lineHeight: 28px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_0dc61961:
+  - '#0A0A0A'
+layout_f55146b8:
+  mode: row
+  padding: 0px 10px
+  justifyContent: center
+  alignItems: center
+  gap: 6px
+  sizing:
+    horizontal: hug
+    vertical: fixed
+  dimensions:
+    height: 32
+fill_44168f3d:
+  - '#F5F5F5'
+fill_75800f08:
+  - rgba(255, 255, 255, 0)
+style_c063976c:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_56d3c81c:
+  mode: none
+  sizing:
+    horizontal: fill
+    vertical: hug
+text-sm/normal:
+  fontFamily: Geist
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: RIGHT
+  textAlignVertical: TOP
+fill_431cd7ae:
+  - '#737373'
+fill_491b2e25:
+  - '#E5E5E5'
+elevation/control:
+  boxShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)
+text-3xl/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 30
+  lineHeight: 36px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+text-base/normal:
+  fontFamily: Geist
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 16
+  lineHeight: 24px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_78a72155:
+  mode: column
+  alignSelf: stretch
+  padding: 16px 0px
+  alignItems: stretch
+  gap: 16px
+  sizing:
+    horizontal: fill
+    vertical: hug
+fill_e81b45a3:
+  - rgba(10, 10, 10, 0.1)
+elevation/card:
+  boxShadow: 0px 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px 0px rgba(0, 0, 0, 0)
+style_5753cff3:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 16
+  lineHeight: 22px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+style_8d2d02f2:
+  fontFamily: Geist
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_b4e39e89:
+  mode: row
+  padding: 2px 8px
+  justifyContent: center
+  alignItems: center
+  gap: 4px
+  sizing:
+    horizontal: hug
+    vertical: fixed
+  dimensions:
+    height: 20
+style_291f574d:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 12
+  lineHeight: 16px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_d6eab79f:
+  - '#171717'
+text-sm/normal (6:6):
+  fontFamily: Geist
+  fontStyle: Regular
+  fontWeight: 400
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+text-sm/medium:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_e2ff78a1:
+  mode: row
+  alignSelf: stretch
+  padding: 4px 10px
+  alignItems: center
+  sizing:
+    horizontal: fill
+    vertical: fixed
+  dimensions:
+    height: 32
+layout_2683b952:
+  mode: row
+  alignItems: center
+  gap: 12px
+  sizing:
+    horizontal: hug
+    vertical: hug
+layout_6e11cf67:
+  mode: row
+  justifyContent: center
+  alignItems: center
+  sizing:
+    horizontal: fixed
+    vertical: fixed
+  dimensions:
+    width: 16
+    height: 16
+effect_0d0ada4b:
+  boxShadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05)
+style_d7526720:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 14px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+text-base/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 16
+  lineHeight: 24px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+text-2xl/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 24
+  lineHeight: 32px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+text-sm/semibold:
+  fontFamily: Geist
+  fontStyle: SemiBold
+  fontWeight: 600
+  fontSize: 14
+  lineHeight: 20px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+layout_f0b7980a:
+  mode: row
+  alignSelf: stretch
+  padding: 8px 10px
+  alignItems: center
+  gap: 8px
+  sizing:
+    horizontal: fill
+    vertical: fixed
+  dimensions:
+    height: 44
+style_e069ac9d:
+  fontFamily: Geist
+  fontStyle: Medium
+  fontWeight: 500
+  fontSize: 14
+  lineHeight: 19.25px
+  textAlignHorizontal: LEFT
+  textAlignVertical: TOP
+fill_0a627e32:
+  - '#E7000B'
+focus/ring-destructive:
+  boxShadow: 0px 0px 0px 3px rgba(231, 0, 11, 0.2)
+
+ELEMENTS:
+EL-db586efb:
+  type: FRAME
+  layout:
+    mode: column
+    alignItems: center
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 1440
+  fills: fill_658ab2fa
+EL-bbfc7f62:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: center
+    sizing:
+      horizontal: fill
+      vertical: hug
+  fills: fill_658ab2fa
+EL-094158a6:
+  type: FRAME
+  layout:
+    mode: row
+    padding: 16px 0px
+    alignItems: center
+    gap: 24px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 1200
+EL-12a1d833:
+  type: TEXT
+  layout: layout_177c5efc
+  text: PennyPlan
+  textStyle: text-xl/semibold
+  fills: fill_0dc61961
+EL-70c1b2ec:
+  type: INSTANCE
+  layout: layout_f55146b8
+  fills: fill_44168f3d
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 21:32
+  componentProperties:
+    Label: Kategorie
+EL-8878fbba:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Kategorie
+  textStyle: style_c063976c
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Label
+EL-c6e3d824:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: aleksandra@pennyplan.example
+  textStyle: text-sm/normal
+  fills: fill_431cd7ae
+EL-f2a3f421:
+  type: INSTANCE
+  layout: layout_f55146b8
+  fills: fill_658ab2fa
+  strokes: fill_491b2e25
+  strokeWeight: 1px
+  effects: elevation/control
+  borderRadius: 10px
+  componentId: 21:14
+  componentProperties:
+    Label: Wyloguj
+EL-b6a68ad4:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Wyloguj
+  textStyle: style_c063976c
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Label
+EL-d08eab0f:
+  type: INSTANCE
+  layout:
+    mode: none
+    sizing:
+      horizontal: fill
+      vertical: fixed
+    dimensions:
+      height: 1
+  fills: fill_491b2e25
+  componentId: 25:551
+EL-e525a047:
+  type: FRAME
+  layout:
+    mode: column
+    padding: 32px 0px
+    alignItems: stretch
+    gap: 32px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 1200
+EL-bc40306a:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    gap: 8px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-a4b21acf:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Kategorie
+  textStyle: text-3xl/semibold
+  fills: fill_0dc61961
+EL-b560cc3f:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Kategorie to koperty, na które dzielisz każdy dochód.
+  textStyle: text-base/normal
+  fills: fill_431cd7ae
+EL-fb9d891a:
+  type: FRAME
+  layout:
+    mode: row
+    alignSelf: stretch
+    gap: 32px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-37cd6571:
+  type: FRAME
+  layout:
+    mode: column
+    alignItems: stretch
+    gap: 24px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-782e0691:
+  type: INSTANCE
+  layout: layout_78a72155
+  fills: fill_658ab2fa
+  strokes: fill_e81b45a3
+  strokeWeight: 1px
+  strokeAlign: OUTSIDE
+  effects: elevation/card
+  borderRadius: 14px
+  componentId: 59:25
+  componentProperties:
+    Show Description: true
+    Title: Nie masz jeszcze żadnej kategorii
+    Show Action: false
+    Show Header: true
+    Description: Kategoria to koperta na część dochodu. Ustalasz, jaki procent wpływu do niej trafia – bez zapisywania paragonów.
+EL-48bf4f19:
+  type: FRAME
+  layout:
+    mode: row
+    alignSelf: stretch
+    padding: 0px 16px
+    gap: 4px
+    sizing:
+      horizontal: fill
+      vertical: hug
+  componentPropertyReferences:
+    visible: Show Header
+EL-6d1b5341:
+  type: FRAME
+  layout:
+    mode: column
+    alignItems: stretch
+    gap: 4px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-a27d3321:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Nie masz jeszcze żadnej kategorii
+  textStyle: style_5753cff3
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-812f5b87:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Kategoria to koperta na część dochodu. Ustalasz, jaki procent wpływu do niej trafia – bez zapisywania paragonów.
+  textStyle: style_8d2d02f2
+  fills: fill_431cd7ae
+  componentPropertyReferences:
+    visible: Show Description
+    text: Description
+EL-277bce55:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    padding: 0px 16px
+    alignItems: stretch
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-74c06011:
+  type: SLOT
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    gap: 16px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-ecd9240b:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    gap: 24px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-4848f3c9:
+  type: FRAME
+  layout:
+    mode: row
+    alignSelf: stretch
+    gap: 24px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-ec900ebf:
+  type: FRAME
+  layout:
+    mode: column
+    gap: 12px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-17fcfe5d:
+  type: INSTANCE
+  layout: layout_b4e39e89
+  fills: fill_44168f3d
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 26px
+  componentId: 22:12
+  componentProperties:
+    Label: Przepływowa
+EL-89c0edc3:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Przepływowa
+  textStyle: style_291f574d
+  fills: fill_d6eab79f
+  componentPropertyReferences:
+    text: Label
+EL-3096d5e0:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Życie i rachunki
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-c632fd6a:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Jedzenie na mieście
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-691a3750:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Przyjemności
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-702f05d0:
+  type: INSTANCE
+  layout: layout_b4e39e89
+  strokes: fill_491b2e25
+  strokeWeight: 1px
+  borderRadius: 26px
+  componentId: 22:24
+  componentProperties:
+    Label: Narastająca
+EL-fa274384:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Narastająca
+  textStyle: style_291f574d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Label
+EL-e37501e0:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Wakacje
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-87551752:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Opłaty roczne
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-57e84b4a:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Oszczędności
+  textStyle: text-sm/normal (6:6)
+  fills: fill_0dc61961
+EL-325396a5:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: To tylko przykłady – nic nie tworzymy za Ciebie.
+  textStyle: text-sm/normal (6:6)
+  fills: fill_431cd7ae
+EL-8a4884b5:
+  type: FRAME
+  layout:
+    mode: column
+    alignItems: stretch
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 380
+EL-436b16ca:
+  type: INSTANCE
+  layout: layout_78a72155
+  fills: fill_658ab2fa
+  strokes: fill_e81b45a3
+  strokeWeight: 1px
+  strokeAlign: OUTSIDE
+  effects: elevation/card
+  borderRadius: 14px
+  componentId: 59:25
+  componentProperties:
+    Show Description: false
+    Title: Nowa kategoria
+    Show Action: false
+    Show Header: true
+    Description: Card Description
+EL-929905f4:
+  type: FRAME
+  layout:
+    mode: column
+    gap: 4px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-b5a69627:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Nowa kategoria
+  textStyle: style_5753cff3
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-66644a19:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Nazwa
+  textStyle: text-sm/medium
+  fills: fill_0dc61961
+EL-73313a0e:
+  type: INSTANCE
+  layout: layout_e2ff78a1
+  fills: fill_75800f08
+  strokes: fill_491b2e25
+  strokeWeight: 1px
+  effects: elevation/control
+  borderRadius: 10px
+  componentId: 30:6
+  componentProperties:
+    Value: hello@spartan.ng
+    Placeholder: ''
+EL-372dafbd:
+  type: TEXT
+  layout: layout_56d3c81c
+  textStyle: style_8d2d02f2
+  fills: fill_431cd7ae
+  componentPropertyReferences:
+    text: Placeholder
+EL-1519dabc:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    gap: 12px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-311b1e91:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Typ
+  textStyle: text-sm/medium
+  fills: fill_0dc61961
+EL-8b6786e5:
+  type: INSTANCE
+  layout:
+    mode: column
+    alignSelf: stretch
+    sizing:
+      horizontal: fill
+      vertical: hug
+  componentId: 28:50
+EL-896ad5e1:
+  type: SLOT
+  layout:
+    mode: column
+    gap: 8px
+    sizing:
+      horizontal: hug
+      vertical: hug
+EL-3dc1bba1:
+  type: FRAME
+  layout:
+    mode: column
+    gap: 8px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 348
+EL-5c93451f:
+  type: INSTANCE
+  layout: layout_2683b952
+  componentId: 28:34
+  componentProperties:
+    Label: Przepływowa
+EL-9628c7e9:
+  type: INSTANCE
+  layout: layout_6e11cf67
+  fills: fill_75800f08
+  strokes: fill_491b2e25
+  strokeWeight: 1px
+  effects: effect_0d0ada4b
+  borderRadius: 9999px
+  componentId: 28:12
+EL-9fdeb2da:
+  type: ELLIPSE
+  layout:
+    mode: none
+    sizing:
+      horizontal: fixed
+      vertical: fixed
+    dimensions:
+      width: 8
+      height: 8
+  fills: fill_d6eab79f
+EL-113364f5:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Przepływowa
+  textStyle: style_d7526720
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Label
+EL-e44866ab:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    padding: 0px 0px 0px 24px
+    alignItems: stretch
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-8a733658:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Na bieżący miesiąc. Co niewydane, nie przechodzi dalej.
+  textStyle: text-sm/normal (6:6)
+  fills: fill_431cd7ae
+EL-c59d56f3:
+  type: INSTANCE
+  layout: layout_2683b952
+  componentId: 28:22
+  componentProperties:
+    Label: Narastająca
+EL-06debdb6:
+  type: INSTANCE
+  layout: layout_6e11cf67
+  fills: fill_75800f08
+  strokes: fill_491b2e25
+  strokeWeight: 1px
+  effects: effect_0d0ada4b
+  borderRadius: 9999px
+  componentId: 28:6
+EL-5e70ffab:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Narastająca
+  textStyle: style_d7526720
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Label
+EL-9ea25589:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Zbiera się z miesiąca na miesiąc, aż ją wydasz.
+  textStyle: text-sm/normal (6:6)
+  fills: fill_431cd7ae
+EL-d76617db:
+  type: INSTANCE
+  layout:
+    mode: row
+    alignSelf: stretch
+    padding: 0px 10px
+    justifyContent: center
+    alignItems: center
+    gap: 6px
+    sizing:
+      horizontal: fill
+      vertical: fixed
+    dimensions:
+      height: 32
+  fills: fill_d6eab79f
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 21:6
+  componentProperties:
+    Label: Dodaj kategorię
+EL-8099671f:
+  type: TEXT
+  layout: layout_177c5efc
+  text: Dodaj kategorię
+  textStyle: style_c063976c
+  fills:
+    - '#FAFAFA'
+  componentPropertyReferences:
+    text: Label
+EL-28744a58:
+  type: FRAME
+  layout:
+    mode: column
+    alignItems: center
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 390
+  fills: fill_658ab2fa
+EL-1c5e7c17:
+  type: FRAME
+  layout:
+    mode: row
+    padding: 16px
+    alignItems: center
+    gap: 12px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 390
+EL-d4b7cc9b:
+  type: TEXT
+  layout: layout_177c5efc
+  text: PennyPlan
+  textStyle: text-base/semibold
+  fills: fill_0dc61961
+EL-69f3d095:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: aleksandra.kowalska.dlugi.adres@pennyplan.example
+  textStyle: text-sm/normal
+  fills: fill_431cd7ae
+EL-de169aaf:
+  type: FRAME
+  layout:
+    mode: row
+    padding: 0px 16px 12px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 390
+EL-9c072465:
+  type: FRAME
+  layout:
+    mode: column
+    padding: 32px 0px
+    alignItems: stretch
+    gap: 32px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 358
+EL-f9465185:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Kategorie
+  textStyle: text-2xl/semibold
+  fills: fill_0dc61961
+EL-e9077466:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    alignItems: stretch
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-1c97571e:
+  type: FRAME
+  layout:
+    mode: column
+    gap: 8px
+    sizing:
+      horizontal: fixed
+      vertical: hug
+    dimensions:
+      width: 326
+EL-50ef8a26:
+  type: FRAME
+  layout:
+    mode: column
+    alignSelf: stretch
+    gap: 12px
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-b7adcec7:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Wakacje
+  textStyle: style_8d2d02f2
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Value
+EL-92138881:
+  type: INSTANCE
+  layout: layout_2683b952
+  componentId: 28:22
+  componentProperties:
+    Label: Przepływowa
+EL-bc0cd3fb:
+  type: INSTANCE
+  layout: layout_2683b952
+  componentId: 28:34
+  componentProperties:
+    Label: Narastająca
+EL-e804e9e5:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Przepływowe · 3
+  textStyle: text-sm/semibold
+  fills: fill_0dc61961
+EL-0334c8d9:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Jedzenie na mieście
+EL-f676945a:
+  type: FRAME
+  layout:
+    mode: column
+    sizing:
+      horizontal: fill
+      vertical: hug
+EL-82e7d3aa:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Jedzenie na mieście
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-452a9c82:
+  type: SLOT
+  layout:
+    mode: row
+    alignItems: center
+    gap: 8px
+    sizing:
+      horizontal: hug
+      vertical: hug
+  componentPropertyReferences:
+    visible: Show Actions
+EL-088c5d6d:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Przyjemności
+EL-f16d20e9:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Przyjemności
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-5d38413d:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Życie i rachunki
+EL-10a6da01:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Życie i rachunki
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-d982ac66:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Narastające · 3
+  textStyle: text-sm/semibold
+  fills: fill_0dc61961
+EL-cbbd4594:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Obligacje rodzinne
+EL-4cd5b321:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Obligacje rodzinne
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-59cf3a2a:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Opłaty roczne
+EL-7aaa6f61:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Opłaty roczne
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+EL-944ec56f:
+  type: INSTANCE
+  layout: layout_f0b7980a
+  strokes: fill_75800f08
+  strokeWeight: 1px
+  borderRadius: 10px
+  componentId: 85:73
+  componentProperties:
+    Show Actions: true
+    Show Description: false
+    Show Media: false
+    Description: A simple item with title and description.
+    Title: Wakacje
+EL-6b4d2ccb:
+  type: TEXT
+  layout: layout_56d3c81c
+  text: Wakacje
+  textStyle: style_e069ac9d
+  fills: fill_0dc61961
+  componentPropertyReferences:
+    text: Title
+
+COMPONENTS:
+21:32:
+  id: 21:32
+  key: 790e8183cac29ad89cbd9fea66ed0e878912a0c0
+  name: Variant=ghost, Size=default, State=hover, Icon=none
+  componentSetId: 21:969
+21:14:
+  id: 21:14
+  key: 336ec4965c91f9b158da65c75d5fe9928814a33c
+  name: Variant=outline, Size=default, State=default, Icon=none
+  componentSetId: 21:969
+25:551:
+  id: 25:551
+  key: f0952cea28e214d7ed163c5de930d5d46dbf3fc3
+  name: Orientation=horizontal
+  componentSetId: 25:556
+59:25:
+  id: 59:25
+  key: 7b23c55b129576976fae53bc4e5eaceb150cabb0
+  name: Size=default, With Footer=false
+  componentSetId: 59:62
+21:46:
+  id: 21:46
+  key: 471b69d83ccaa051d3607356d5fe7d3b94cf68d0
+  name: Variant=link, Size=default, State=default, Icon=none
+  componentSetId: 21:969
+22:12:
+  id: 22:12
+  key: d6cb479b9dcf799099c4aa429d4ef618f32e7990
+  name: Variant=secondary, State=default, Icon=none
+  componentSetId: 22:189
+22:24:
+  id: 22:24
+  key: 2027d82a375c62482d7401d2f070ba5f097f2e14
+  name: Variant=outline, State=default, Icon=none
+  componentSetId: 22:189
+30:6:
+  id: 30:6
+  key: 1ff304343611813635c2ae7c9454be0466cec6d0
+  name: State=default, Content=placeholder
+  componentSetId: 30:25
+28:50:
+  id: 28:50
+  key: 0e81b5ffa9b504921b1e04f93beccf6f3ff29abe
+  name: Radio Group
+28:34:
+  id: 28:34
+  key: 9af109a82abed2809b91850dc391c30bacf02a63
+  name: Checked=true, State=default
+  componentSetId: 28:49
+28:12:
+  id: 28:12
+  key: 8a48832ab18237f9926414a52b4b652fd6d35e87
+  name: Checked=true, State=default
+  componentSetId: 28:21
+28:22:
+  id: 28:22
+  key: 01e75bc5e2fb84857885e49fe6bfd71b1eaba077
+  name: Checked=false, State=default
+  componentSetId: 28:49
+28:6:
+  id: 28:6
+  key: 99f72f5bc2a57b4801ec96462c458623c3369b9f
+  name: Checked=false, State=default
+  componentSetId: 28:21
+21:6:
+  id: 21:6
+  key: e2e0d51b6055c0b6bbf7fd454b26c9c3fbd1cef4
+  name: Variant=default, Size=default, State=default, Icon=none
+  componentSetId: 21:969
+30:14:
+  id: 30:14
+  key: 7f9630dd3200507f58dfd75cb748ddc348d1e968
+  name: State=default, Content=value
+  componentSetId: 30:25
+85:73:
+  id: 85:73
+  key: 10b29c1bbff057a94622880f4c0e804105d80c42
+  name: Variant=default, Size=xs, State=default
+  componentSetId: 85:227
+85:10:
+  id: 85:10
+  key: d158ee730ef6a16be95dd789239350ed79a48d45
+  name: Variant=icon, Size=default
+  componentSetId: 85:22
+7:316:
+  id: 7:316
+  key: 4e42225e4ff8b31a572a26538e8ef4245b3b57f4
+  name: lucide/badge-check
+30:18:
+  id: 30:18
+  key: 97f529e8d8e0eb1f363b8e25276eedd828aa6a7e
+  name: State=invalid, Content=value
+  componentSetId: 30:25
+
+COMPONENT_SETS:
+21:969:
+  id: 21:969
+  key: dc3b7eaddc6be5b7e8ddc03cb4271df7d760d831
+  name: Button
+  description: |-
+    Spartan NG · HlmButton — button[hlmBtn]
+    import { HlmButtonImports } from '@spartan-ng/helm/button'
+    Figma→Angular: Label→text · Swap Icon→<ng-icon> · Variant→[variant] · Size→[size] · State→CSS/aria+[disabled] · Icon→icon position (start/end)
+    https://www.spartan.ng/components/button
+
+    When to use: One Variant=default (primary) per view for the main action; outline or secondary for supporting actions; ghost for toolbars and low-emphasis actions; destructive only for irreversible actions, ideally behind an Alert Dialog; link for inline navigation. Use the Variant and Size inputs instead of restyling. There is no loading input: put a Spinner in the button and disable it. Icon-only buttons need an aria-label.
+25:556:
+  id: 25:556
+  key: 87ca415ea66ea9bd2822cda1489b099c41a19b82
+  name: Separator
+  description: |-
+    Spartan NG · HlmSeparator — [hlmSeparator]
+    import { HlmSeparatorImports } from '@spartan-ng/helm/separator'
+    Figma→Angular: Orientation→orientation attribute
+    https://www.spartan.ng/components/separator
+
+    When to use: A line that separates content; use it instead of an hr. Orientation=horizontal between sections, vertical between inline items.
+59:62:
+  id: 59:62
+  key: 5b119b6cc2519b377f657054c9955acd0c3d186e
+  name: Card
+  description: |-
+    Spartan NG · HlmCard — [hlmCard]
+    import { HlmCardImports } from '@spartan-ng/helm/card'
+    Figma→Angular: Action→<ng-content> · Content→<ng-content> · Footer→<ng-content> · Title→text · Description→text · Show Header→@if · Show Description→@if · Show Action→@if · Size→[size] · With Footer→@if
+    https://www.spartan.ng/components/card
+
+    When to use: Groups related content and actions. Compose Header, Title, Description, Content and Footer instead of styling a bare container. Size=sm for dense grids. Use Item for list rows, Alert for messages.
+22:189:
+  id: 22:189
+  key: 6d163c78d07f5d147b5f460ef78419bc0ed91957
+  name: Badge
+  description: |-
+    Spartan NG · HlmBadge — [hlmBadge]
+    import { HlmBadgeImports } from '@spartan-ng/helm/badge'
+    Figma→Angular: Label→text · Swap Icon→<ng-icon> · Variant→[variant] · State→CSS/aria · Icon→child position
+    https://www.spartan.ng/components/badge
+
+    When to use: Status or short metadata, never an action (use Button); use it instead of custom styled pills. default for emphasis, secondary for neutral status, outline for tags, destructive for errors, ghost and link for quiet inline use.
+30:25:
+  id: 30:25
+  key: 88c21a2c704824d9678b1d16a53a8673623e180d
+  name: Input
+  description: |-
+    Spartan NG · HlmInput — [hlmInput]
+    import { HlmInputImports } from '@spartan-ng/helm/input'
+    Figma→Angular: Placeholder→placeholder attr · Value→text · State→CSS/aria+[disabled] · Content→placeholder vs value
+    https://www.spartan.ng/components/input
+
+    When to use: Single-line text. Use Textarea for multi-line, Select or Combobox to choose from a list, Input OTP for codes. Put it in a Field with a Label; State=invalid only together with an error message.
+28:49:
+  id: 28:49
+  key: 3a417f7613371263123abb7f83469a8b42d58acd
+  name: Radio
+  description: |-
+    Spartan NG · HlmRadio — hlm-radio
+    import { HlmRadioGroupImports } from '@spartan-ng/helm/radio-group'
+    Figma→Angular: Label→text · Checked→checked state · State→CSS/aria+[disabled]
+    https://www.spartan.ng/components/radio-group
+28:21:
+  id: 28:21
+  key: 6f665b471dd41bbb7f21311e84573238069243c9
+  name: Radio Indicator
+  description: |-
+    Spartan NG · HlmRadioIndicator — hlm-radio-indicator
+    import { HlmRadioGroupImports } from '@spartan-ng/helm/radio-group'
+    Figma→Angular: Checked→checked state · State→CSS/aria+[disabled]
+    https://www.spartan.ng/components/radio-group
+85:227:
+  id: 85:227
+  key: 7a7e0f004aa7ef8c5f0a475e4b78c9fd6d4f62f2
+  name: Item
+  description: |-
+    Spartan NG · HlmItem — [hlmItem]
+    import { HlmItemImports } from '@spartan-ng/helm/item'
+    Figma→Angular: Media→<ng-content> · Actions→<ng-content> · Title→text · Description→text · Show Media→@if · Show Description→@if · Show Actions→@if · Variant→[variant] · Size→[size] · State→CSS/aria
+    https://www.spartan.ng/components/item
+
+    When to use: A row or media object in a list (settings, files, search results). Variant=outline for bordered lists, muted for emphasis. Size=sm or xs for dense lists.
+85:22:
+  id: 85:22
+  key: fdb996d950fe49aacd88fb5e7e5663480a40c535
+  name: Item Media
+  description: |-
+    Spartan NG · HlmItemMedia — [hlmItemMedia]
+    import { HlmItemImports } from '@spartan-ng/helm/item'
+    Figma→Angular: Icon→<ng-icon> · Variant→[variant] (default | icon | image) · Size→follows the parent Item size
+    https://www.spartan.ng/components/item
+
+NODES:
+[CANVAS] "2. kategorie" #2029:1643
+  [FRAME] "A · Pusty stan · desktop /categories" #2033:345 template=EL-db586efb
+    [FRAME] "Nagłówek aplikacji" #2033:346 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:347 template=EL-094158a6
+        [TEXT] #2033:348 template=EL-12a1d833
+        [INSTANCE] "Kategorie · aktywne" #2033:356 template=EL-70c1b2ec
+          [TEXT] #I2033:356;21:33 template=EL-8878fbba
+        [TEXT] #2033:349 template=EL-c6e3d824
+        [INSTANCE] "Wyloguj" #2033:350 template=EL-f2a3f421
+          [TEXT] #I2033:350;21:15 template=EL-b6a68ad4
+      [INSTANCE] "Linia nagłówka" #2033:351 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:358 template=EL-e525a047
+      [FRAME] "Nagłówek strony" #2033:359 template=EL-bc40306a
+        [TEXT] #2033:360 template=EL-a4b21acf
+        [TEXT] #2033:361 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:362 template=EL-fb9d891a
+        [FRAME] "Pusty stan" #2033:363 template=EL-37cd6571
+          [INSTANCE] "Nie masz jeszcze żadnej kategorii" #2033:814 template=EL-782e0691
+            [FRAME] "Card Header" #I2033:814;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:814;59:27 template=EL-6d1b5341
+                [TEXT] #I2033:814;59:28 template=EL-a27d3321
+                [TEXT] #I2033:814;59:29 template=EL-812f5b87
+            [FRAME] "Card Content" #I2033:814;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:814;59:34 template=EL-74c06011
+                [FRAME] "Przykłady kategorii" #I2033:814;59:34;2033:827 template=EL-ecd9240b
+                  [FRAME] "Dwa typy kategorii" #I2033:814;59:34;2033:829 template=EL-4848f3c9
+                    [FRAME] "Przepływowa — przykłady" #I2033:814;59:34;2033:831 template=EL-ec900ebf
+                      [INSTANCE] "Przepływowa" #I2033:814;59:34;2033:834 template=EL-17fcfe5d
+                        [TEXT] #I2033:814;59:34;2033:834;22:13 template=EL-89c0edc3
+                      [FRAME] "Przykłady — nieklikalne" #I2033:814;59:34;2033:836 template=EL-bc40306a
+                        [TEXT] #I2033:814;59:34;2033:838 template=EL-3096d5e0
+                        [TEXT] #I2033:814;59:34;2033:840 template=EL-c632fd6a
+                        [TEXT] #I2033:814;59:34;2033:842 template=EL-691a3750
+                    [FRAME] "Narastająca — przykłady" #I2033:814;59:34;2033:844 template=EL-ec900ebf
+                      [INSTANCE] "Narastająca" #I2033:814;59:34;2033:847 template=EL-702f05d0
+                        [TEXT] #I2033:814;59:34;2033:847;22:25 template=EL-fa274384
+                      [FRAME] "Przykłady — nieklikalne" #I2033:814;59:34;2033:849 template=EL-bc40306a
+                        [TEXT] #I2033:814;59:34;2033:851 template=EL-e37501e0
+                        [TEXT] #I2033:814;59:34;2033:853 template=EL-87551752
+                        [TEXT] #I2033:814;59:34;2033:855 template=EL-57e84b4a
+                  [TEXT] #I2033:814;59:34;2033:857 template=EL-325396a5
+        [FRAME] "Nowa kategoria — formularz" #2033:364 template=EL-8a4884b5
+          [INSTANCE] "Nowa kategoria" #2033:473 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:473;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:473;59:27 template=EL-929905f4
+                [TEXT] #I2033:473;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:473;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:473;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:473;59:34;2033:487 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:473;59:34;2033:489 template=EL-bc40306a
+                    [TEXT] #I2033:473;59:34;2033:491 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:473;59:34;2033:494 template=EL-73313a0e
+                      [TEXT] #I2033:473;59:34;2033:494;30:7 template=EL-372dafbd
+                  [FRAME] "Typ kategorii" #I2033:473;59:34;2033:496 template=EL-1519dabc
+                    [TEXT] #I2033:473;59:34;2033:498 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:473;59:34;2033:810 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:473;59:34;2033:810;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:473;59:34;2033:810;28:51;2033:500 template=EL-3dc1bba1
+                          [INSTANCE] "Przepływowa" #I2033:473;59:34;2033:810;28:51;2033:505 template=EL-5c93451f
+                            [INSTANCE] "Radio Indicator" #I2033:473;59:34;2033:810;28:51;2033:505;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:473;59:34;2033:810;28:51;2033:505;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:473;59:34;2033:810;28:51;2033:505;28:37 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:473;59:34;2033:810;28:51;2033:510 template=EL-e44866ab
+                            [TEXT] #I2033:473;59:34;2033:810;28:51;2033:512 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:473;59:34;2033:810;28:51;2033:514 template=EL-3dc1bba1
+                          [INSTANCE] "Narastająca" #I2033:473;59:34;2033:810;28:51;2033:519 template=EL-c59d56f3
+                            [INSTANCE] "Radio Indicator" #I2033:473;59:34;2033:810;28:51;2033:519;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:473;59:34;2033:810;28:51;2033:519;28:25 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:473;59:34;2033:810;28:51;2033:521 template=EL-e44866ab
+                            [TEXT] #I2033:473;59:34;2033:810;28:51;2033:523 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:473;59:34;2033:526 template=EL-d76617db
+                    [TEXT] #I2033:473;59:34;2033:526;21:7 template=EL-8099671f
+  [FRAME] "A · Pusty stan · mobile /categories" #2033:365 template=EL-28744a58
+    [FRAME] "Nagłówek aplikacji" #2033:366 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:367 template=EL-1c5e7c17
+        [TEXT] #2033:368 template=EL-d4b7cc9b
+        [TEXT] #2033:369 template=EL-69f3d095
+        [INSTANCE] "Wyloguj" #2033:370 template=EL-f2a3f421
+          [TEXT] #I2033:370;21:15 template=EL-b6a68ad4
+      [FRAME] "Nawigacja" #2033:378 template=EL-de169aaf
+        [INSTANCE] "Kategorie · aktywne" #2033:376 template=EL-70c1b2ec
+          [TEXT] #I2033:376;21:33 template=EL-8878fbba
+      [INSTANCE] "Linia nagłówka" #2033:371 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:379 template=EL-9c072465
+      [FRAME] "Nagłówek strony" #2033:380 template=EL-bc40306a
+        [TEXT] #2033:381 template=EL-f9465185
+        [TEXT] #2033:382 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:383 template=EL-ecd9240b
+        [FRAME] "Nowa kategoria — formularz" #2033:385 template=EL-e9077466
+          [INSTANCE] "Nowa kategoria" #2033:527 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:527;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:527;59:27 template=EL-929905f4
+                [TEXT] #I2033:527;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:527;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:527;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:527;59:34;2033:540 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:527;59:34;2033:542 template=EL-bc40306a
+                    [TEXT] #I2033:527;59:34;2033:544 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:527;59:34;2033:547 template=EL-73313a0e
+                      [TEXT] #I2033:527;59:34;2033:547;30:7 template=EL-372dafbd
+                  [FRAME] "Typ kategorii" #I2033:527;59:34;2033:549 template=EL-1519dabc
+                    [TEXT] #I2033:527;59:34;2033:551 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:527;59:34;2033:872 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:527;59:34;2033:872;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:527;59:34;2033:872;28:51;2033:553 template=EL-1c97571e
+                          [INSTANCE] "Przepływowa" #I2033:527;59:34;2033:872;28:51;2033:558 template=EL-5c93451f
+                            [INSTANCE] "Radio Indicator" #I2033:527;59:34;2033:872;28:51;2033:558;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:527;59:34;2033:872;28:51;2033:558;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:527;59:34;2033:872;28:51;2033:558;28:37 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:527;59:34;2033:872;28:51;2033:563 template=EL-e44866ab
+                            [TEXT] #I2033:527;59:34;2033:872;28:51;2033:565 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:527;59:34;2033:872;28:51;2033:567 template=EL-1c97571e
+                          [INSTANCE] "Narastająca" #I2033:527;59:34;2033:872;28:51;2033:572 template=EL-c59d56f3
+                            [INSTANCE] "Radio Indicator" #I2033:527;59:34;2033:872;28:51;2033:572;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:527;59:34;2033:872;28:51;2033:572;28:25 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:527;59:34;2033:872;28:51;2033:574 template=EL-e44866ab
+                            [TEXT] #I2033:527;59:34;2033:872;28:51;2033:576 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:527;59:34;2033:579 template=EL-d76617db
+                    [TEXT] #I2033:527;59:34;2033:579;21:7 template=EL-8099671f
+        [FRAME] "Pusty stan" #2033:384 template=EL-ecd9240b
+          [INSTANCE] "Nie masz jeszcze żadnej kategorii" #2033:876 template=EL-782e0691
+            [FRAME] "Card Header" #I2033:876;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:876;59:27 template=EL-6d1b5341
+                [TEXT] #I2033:876;59:28 template=EL-a27d3321
+                [TEXT] #I2033:876;59:29 template=EL-812f5b87
+            [FRAME] "Card Content" #I2033:876;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:876;59:34 template=EL-74c06011
+                [FRAME] "Przykłady kategorii" #I2033:876;59:34;2033:889 template=EL-ecd9240b
+                  [FRAME] "Dwa typy kategorii" #I2033:876;59:34;2033:891 template=EL-ecd9240b
+                    [FRAME] "Przepływowa — przykłady" #I2033:876;59:34;2033:893 template=EL-50ef8a26
+                      [INSTANCE] "Przepływowa" #I2033:876;59:34;2033:896 template=EL-17fcfe5d
+                        [TEXT] #I2033:876;59:34;2033:896;22:13 template=EL-89c0edc3
+                      [FRAME] "Przykłady — nieklikalne" #I2033:876;59:34;2033:898 template=EL-bc40306a
+                        [TEXT] #I2033:876;59:34;2033:900 template=EL-3096d5e0
+                        [TEXT] #I2033:876;59:34;2033:902 template=EL-c632fd6a
+                        [TEXT] #I2033:876;59:34;2033:904 template=EL-691a3750
+                    [FRAME] "Narastająca — przykłady" #I2033:876;59:34;2033:906 template=EL-50ef8a26
+                      [INSTANCE] "Narastająca" #I2033:876;59:34;2033:909 template=EL-702f05d0
+                        [TEXT] #I2033:876;59:34;2033:909;22:25 template=EL-fa274384
+                      [FRAME] "Przykłady — nieklikalne" #I2033:876;59:34;2033:911 template=EL-bc40306a
+                        [TEXT] #I2033:876;59:34;2033:913 template=EL-e37501e0
+                        [TEXT] #I2033:876;59:34;2033:915 template=EL-87551752
+                        [TEXT] #I2033:876;59:34;2033:917 template=EL-57e84b4a
+                  [TEXT] #I2033:876;59:34;2033:919 template=EL-325396a5
+  [FRAME] "B · Wakacje · desktop /categories" #2033:386 template=EL-db586efb
+    [FRAME] "Nagłówek aplikacji" #2033:387 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:388 template=EL-094158a6
+        [TEXT] #2033:389 template=EL-12a1d833
+        [INSTANCE] "Kategorie · aktywne" #2033:397 template=EL-70c1b2ec
+          [TEXT] #I2033:397;21:33 template=EL-8878fbba
+        [TEXT] #2033:390 template=EL-c6e3d824
+        [INSTANCE] "Wyloguj" #2033:391 template=EL-f2a3f421
+          [TEXT] #I2033:391;21:15 template=EL-b6a68ad4
+      [INSTANCE] "Linia nagłówka" #2033:392 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:399 template=EL-e525a047
+      [FRAME] "Nagłówek strony" #2033:400 template=EL-bc40306a
+        [TEXT] #2033:401 template=EL-a4b21acf
+        [TEXT] #2033:402 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:403 template=EL-fb9d891a
+        [FRAME] "Pusty stan" #2033:404 template=EL-37cd6571
+          [INSTANCE] "Nie masz jeszcze żadnej kategorii" #2033:938 template=EL-782e0691
+            [FRAME] "Card Header" #I2033:938;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:938;59:27 template=EL-6d1b5341
+                [TEXT] #I2033:938;59:28 template=EL-a27d3321
+                [TEXT] #I2033:938;59:29 template=EL-812f5b87
+            [FRAME] "Card Content" #I2033:938;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:938;59:34 template=EL-74c06011
+                [FRAME] "Przykłady kategorii" #I2033:938;59:34;2033:951 template=EL-ecd9240b
+                  [FRAME] "Dwa typy kategorii" #I2033:938;59:34;2033:953 template=EL-4848f3c9
+                    [FRAME] "Przepływowa — przykłady" #I2033:938;59:34;2033:955 template=EL-ec900ebf
+                      [INSTANCE] "Przepływowa" #I2033:938;59:34;2033:958 template=EL-17fcfe5d
+                        [TEXT] #I2033:938;59:34;2033:958;22:13 template=EL-89c0edc3
+                      [FRAME] "Przykłady — nieklikalne" #I2033:938;59:34;2033:960 template=EL-bc40306a
+                        [TEXT] #I2033:938;59:34;2033:962 template=EL-3096d5e0
+                        [TEXT] #I2033:938;59:34;2033:964 template=EL-c632fd6a
+                        [TEXT] #I2033:938;59:34;2033:966 template=EL-691a3750
+                    [FRAME] "Narastająca — przykłady" #I2033:938;59:34;2033:968 template=EL-ec900ebf
+                      [INSTANCE] "Narastająca" #I2033:938;59:34;2033:971 template=EL-702f05d0
+                        [TEXT] #I2033:938;59:34;2033:971;22:25 template=EL-fa274384
+                      [FRAME] "Przykłady — nieklikalne" #I2033:938;59:34;2033:973 template=EL-bc40306a
+                        [TEXT] #I2033:938;59:34;2033:975 template=EL-e37501e0
+                        [TEXT] #I2033:938;59:34;2033:977 template=EL-87551752
+                        [TEXT] #I2033:938;59:34;2033:979 template=EL-57e84b4a
+                  [TEXT] #I2033:938;59:34;2033:981 template=EL-325396a5
+        [FRAME] "Nowa kategoria — formularz" #2033:405 template=EL-8a4884b5
+          [INSTANCE] "Nowa kategoria" #2033:580 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:580;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:580;59:27 template=EL-929905f4
+                [TEXT] #I2033:580;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:580;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:580;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:580;59:34;2033:593 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:580;59:34;2033:595 template=EL-bc40306a
+                    [TEXT] #I2033:580;59:34;2033:597 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:580;59:34;2033:600 layout=layout_e2ff78a1 fills=fill_75800f08 strokes=fill_491b2e25 strokeWeight=1px effects=elevation/control borderRadius=10px componentId=30:14 componentProperties={"Placeholder":"Email","Value":"Wakacje"}
+                      [TEXT] #I2033:580;59:34;2033:600;30:15 template=EL-b7adcec7
+                  [FRAME] "Typ kategorii" #I2033:580;59:34;2033:603 template=EL-1519dabc
+                    [TEXT] #I2033:580;59:34;2033:605 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:580;59:34;2033:934 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:580;59:34;2033:934;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:580;59:34;2033:934;28:51;2033:607 template=EL-3dc1bba1
+                          [INSTANCE] "Przepływowa" #I2033:580;59:34;2033:934;28:51;2033:612 template=EL-92138881
+                            [INSTANCE] "Radio Indicator" #I2033:580;59:34;2033:934;28:51;2033:612;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:580;59:34;2033:934;28:51;2033:612;28:25 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:580;59:34;2033:934;28:51;2033:614 template=EL-e44866ab
+                            [TEXT] #I2033:580;59:34;2033:934;28:51;2033:616 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:580;59:34;2033:934;28:51;2033:618 template=EL-3dc1bba1
+                          [INSTANCE] "Narastająca" #I2033:580;59:34;2033:934;28:51;2033:623 template=EL-bc0cd3fb
+                            [INSTANCE] "Radio Indicator" #I2033:580;59:34;2033:934;28:51;2033:623;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:580;59:34;2033:934;28:51;2033:623;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:580;59:34;2033:934;28:51;2033:623;28:37 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:580;59:34;2033:934;28:51;2033:628 template=EL-e44866ab
+                            [TEXT] #I2033:580;59:34;2033:934;28:51;2033:630 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:580;59:34;2033:633 template=EL-d76617db
+                    [TEXT] #I2033:580;59:34;2033:633;21:7 template=EL-8099671f
+  [FRAME] "C · Lista · desktop /categories" #2033:406 template=EL-db586efb
+    [FRAME] "Nagłówek aplikacji" #2033:407 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:408 template=EL-094158a6
+        [TEXT] #2033:409 template=EL-12a1d833
+        [INSTANCE] "Kategorie · aktywne" #2033:417 template=EL-70c1b2ec
+          [TEXT] #I2033:417;21:33 template=EL-8878fbba
+        [TEXT] #2033:410 template=EL-c6e3d824
+        [INSTANCE] "Wyloguj" #2033:411 template=EL-f2a3f421
+          [TEXT] #I2033:411;21:15 template=EL-b6a68ad4
+      [INSTANCE] "Linia nagłówka" #2033:412 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:419 template=EL-e525a047
+      [FRAME] "Nagłówek strony" #2033:420 template=EL-bc40306a
+        [TEXT] #2033:421 template=EL-a4b21acf
+        [TEXT] #2033:422 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:423 template=EL-fb9d891a
+        [FRAME] "Lista kategorii" #2033:424 template=EL-37cd6571
+          [FRAME] "Przepływowe · 3" #2033:1000 template=EL-1519dabc
+            [TEXT] #2033:1001 template=EL-e804e9e5
+            [FRAME] "Kategorie — Przepływowe · 3" #2033:1002 template=EL-e9077466
+              [INSTANCE] "Jedzenie na mieście" #2033:1003 template=EL-0334c8d9
+                [FRAME] "Item Content" #I2033:1003;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1003;85:79 template=EL-82e7d3aa
+                [SLOT] "Actions" #I2033:1003;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1003;85:81;2033:1021 template=EL-17fcfe5d
+                    [TEXT] #I2033:1003;85:81;2033:1021;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1022 template=EL-d08eab0f
+              [INSTANCE] "Przyjemności" #2033:1023 template=EL-088c5d6d
+                [FRAME] "Item Content" #I2033:1023;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1023;85:79 template=EL-f16d20e9
+                [SLOT] "Actions" #I2033:1023;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1023;85:81;2033:1037 template=EL-17fcfe5d
+                    [TEXT] #I2033:1023;85:81;2033:1037;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1038 template=EL-d08eab0f
+              [INSTANCE] "Życie i rachunki" #2033:1039 template=EL-5d38413d
+                [FRAME] "Item Content" #I2033:1039;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1039;85:79 template=EL-10a6da01
+                [SLOT] "Actions" #I2033:1039;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1039;85:81;2033:1053 template=EL-17fcfe5d
+                    [TEXT] #I2033:1039;85:81;2033:1053;22:13 template=EL-89c0edc3
+          [FRAME] "Narastające · 3" #2033:1054 template=EL-1519dabc
+            [TEXT] #2033:1055 template=EL-d982ac66
+            [FRAME] "Kategorie — Narastające · 3" #2033:1056 template=EL-e9077466
+              [INSTANCE] "Obligacje rodzinne" #2033:1057 template=EL-cbbd4594
+                [FRAME] "Item Content" #I2033:1057;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1057;85:79 template=EL-4cd5b321
+                [SLOT] "Actions" #I2033:1057;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1057;85:81;2033:1071 template=EL-702f05d0
+                    [TEXT] #I2033:1057;85:81;2033:1071;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1072 template=EL-d08eab0f
+              [INSTANCE] "Opłaty roczne" #2033:1073 template=EL-59cf3a2a
+                [FRAME] "Item Content" #I2033:1073;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1073;85:79 template=EL-7aaa6f61
+                [SLOT] "Actions" #I2033:1073;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1073;85:81;2033:1087 template=EL-702f05d0
+                    [TEXT] #I2033:1073;85:81;2033:1087;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1088 template=EL-d08eab0f
+              [INSTANCE] "Wakacje" #2033:1089 template=EL-944ec56f
+                [FRAME] "Item Content" #I2033:1089;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1089;85:79 template=EL-6b4d2ccb
+                [SLOT] "Actions" #I2033:1089;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1089;85:81;2033:1103 template=EL-702f05d0
+                    [TEXT] #I2033:1089;85:81;2033:1103;22:25 template=EL-fa274384
+        [FRAME] "Nowa kategoria — formularz" #2033:425 template=EL-8a4884b5
+          [INSTANCE] "Nowa kategoria" #2033:634 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:634;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:634;59:27 template=EL-929905f4
+                [TEXT] #I2033:634;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:634;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:634;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:634;59:34;2033:647 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:634;59:34;2033:649 template=EL-bc40306a
+                    [TEXT] #I2033:634;59:34;2033:651 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:634;59:34;2033:654 template=EL-73313a0e
+                      [TEXT] #I2033:634;59:34;2033:654;30:7 template=EL-372dafbd
+                  [FRAME] "Typ kategorii" #I2033:634;59:34;2033:656 template=EL-1519dabc
+                    [TEXT] #I2033:634;59:34;2033:658 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:634;59:34;2033:996 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:634;59:34;2033:996;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:634;59:34;2033:996;28:51;2033:660 template=EL-3dc1bba1
+                          [INSTANCE] "Przepływowa" #I2033:634;59:34;2033:996;28:51;2033:665 template=EL-5c93451f
+                            [INSTANCE] "Radio Indicator" #I2033:634;59:34;2033:996;28:51;2033:665;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:634;59:34;2033:996;28:51;2033:665;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:634;59:34;2033:996;28:51;2033:665;28:37 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:634;59:34;2033:996;28:51;2033:670 template=EL-e44866ab
+                            [TEXT] #I2033:634;59:34;2033:996;28:51;2033:672 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:634;59:34;2033:996;28:51;2033:674 template=EL-3dc1bba1
+                          [INSTANCE] "Narastająca" #I2033:634;59:34;2033:996;28:51;2033:679 template=EL-c59d56f3
+                            [INSTANCE] "Radio Indicator" #I2033:634;59:34;2033:996;28:51;2033:679;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:634;59:34;2033:996;28:51;2033:679;28:25 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:634;59:34;2033:996;28:51;2033:681 template=EL-e44866ab
+                            [TEXT] #I2033:634;59:34;2033:996;28:51;2033:683 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:634;59:34;2033:686 template=EL-d76617db
+                    [TEXT] #I2033:634;59:34;2033:686;21:7 template=EL-8099671f
+  [FRAME] "C · Lista · mobile /categories" #2033:426 template=EL-28744a58
+    [FRAME] "Nagłówek aplikacji" #2033:427 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:428 template=EL-1c5e7c17
+        [TEXT] #2033:429 template=EL-d4b7cc9b
+        [TEXT] #2033:430 template=EL-69f3d095
+        [INSTANCE] "Wyloguj" #2033:431 template=EL-f2a3f421
+          [TEXT] #I2033:431;21:15 template=EL-b6a68ad4
+      [FRAME] "Nawigacja" #2033:439 template=EL-de169aaf
+        [INSTANCE] "Kategorie · aktywne" #2033:437 template=EL-70c1b2ec
+          [TEXT] #I2033:437;21:33 template=EL-8878fbba
+      [INSTANCE] "Linia nagłówka" #2033:432 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:440 template=EL-9c072465
+      [FRAME] "Nagłówek strony" #2033:441 template=EL-bc40306a
+        [TEXT] #2033:442 template=EL-f9465185
+        [TEXT] #2033:443 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:444 template=EL-ecd9240b
+        [FRAME] "Nowa kategoria — formularz" #2033:446 template=EL-e9077466
+          [INSTANCE] "Nowa kategoria" #2033:687 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:687;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:687;59:27 template=EL-929905f4
+                [TEXT] #I2033:687;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:687;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:687;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:687;59:34;2033:700 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:687;59:34;2033:702 template=EL-bc40306a
+                    [TEXT] #I2033:687;59:34;2033:704 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:687;59:34;2033:707 template=EL-73313a0e
+                      [TEXT] #I2033:687;59:34;2033:707;30:7 template=EL-372dafbd
+                  [FRAME] "Typ kategorii" #I2033:687;59:34;2033:709 template=EL-1519dabc
+                    [TEXT] #I2033:687;59:34;2033:711 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:687;59:34;2033:1118 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:687;59:34;2033:1118;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:687;59:34;2033:1118;28:51;2033:713 template=EL-1c97571e
+                          [INSTANCE] "Przepływowa" #I2033:687;59:34;2033:1118;28:51;2033:718 template=EL-5c93451f
+                            [INSTANCE] "Radio Indicator" #I2033:687;59:34;2033:1118;28:51;2033:718;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:687;59:34;2033:1118;28:51;2033:718;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:687;59:34;2033:1118;28:51;2033:718;28:37 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:687;59:34;2033:1118;28:51;2033:723 template=EL-e44866ab
+                            [TEXT] #I2033:687;59:34;2033:1118;28:51;2033:725 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:687;59:34;2033:1118;28:51;2033:727 template=EL-1c97571e
+                          [INSTANCE] "Narastająca" #I2033:687;59:34;2033:1118;28:51;2033:732 template=EL-c59d56f3
+                            [INSTANCE] "Radio Indicator" #I2033:687;59:34;2033:1118;28:51;2033:732;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:687;59:34;2033:1118;28:51;2033:732;28:25 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:687;59:34;2033:1118;28:51;2033:734 template=EL-e44866ab
+                            [TEXT] #I2033:687;59:34;2033:1118;28:51;2033:736 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:687;59:34;2033:739 template=EL-d76617db
+                    [TEXT] #I2033:687;59:34;2033:739;21:7 template=EL-8099671f
+        [FRAME] "Lista kategorii" #2033:445 template=EL-ecd9240b
+          [FRAME] "Przepływowe · 3" #2033:1122 template=EL-1519dabc
+            [TEXT] #2033:1123 template=EL-e804e9e5
+            [FRAME] "Kategorie — Przepływowe · 3" #2033:1124 template=EL-e9077466
+              [INSTANCE] "Jedzenie na mieście" #2033:1125 template=EL-0334c8d9
+                [FRAME] "Item Content" #I2033:1125;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1125;85:79 template=EL-82e7d3aa
+                [SLOT] "Actions" #I2033:1125;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1125;85:81;2033:1139 template=EL-17fcfe5d
+                    [TEXT] #I2033:1125;85:81;2033:1139;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1140 template=EL-d08eab0f
+              [INSTANCE] "Przyjemności" #2033:1141 template=EL-088c5d6d
+                [FRAME] "Item Content" #I2033:1141;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1141;85:79 template=EL-f16d20e9
+                [SLOT] "Actions" #I2033:1141;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1141;85:81;2033:1155 template=EL-17fcfe5d
+                    [TEXT] #I2033:1141;85:81;2033:1155;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1156 template=EL-d08eab0f
+              [INSTANCE] "Życie i rachunki" #2033:1157 template=EL-5d38413d
+                [FRAME] "Item Content" #I2033:1157;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1157;85:79 template=EL-10a6da01
+                [SLOT] "Actions" #I2033:1157;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1157;85:81;2033:1171 template=EL-17fcfe5d
+                    [TEXT] #I2033:1157;85:81;2033:1171;22:13 template=EL-89c0edc3
+          [FRAME] "Narastające · 3" #2033:1172 template=EL-1519dabc
+            [TEXT] #2033:1173 template=EL-d982ac66
+            [FRAME] "Kategorie — Narastające · 3" #2033:1174 template=EL-e9077466
+              [INSTANCE] "Obligacje rodzinne" #2033:1175 template=EL-cbbd4594
+                [FRAME] "Item Content" #I2033:1175;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1175;85:79 template=EL-4cd5b321
+                [SLOT] "Actions" #I2033:1175;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1175;85:81;2033:1189 template=EL-702f05d0
+                    [TEXT] #I2033:1175;85:81;2033:1189;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1190 template=EL-d08eab0f
+              [INSTANCE] "Opłaty roczne" #2033:1191 template=EL-59cf3a2a
+                [FRAME] "Item Content" #I2033:1191;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1191;85:79 template=EL-7aaa6f61
+                [SLOT] "Actions" #I2033:1191;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1191;85:81;2033:1205 template=EL-702f05d0
+                    [TEXT] #I2033:1191;85:81;2033:1205;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1206 template=EL-d08eab0f
+              [INSTANCE] "Wakacje" #2033:1207 template=EL-944ec56f
+                [FRAME] "Item Content" #I2033:1207;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1207;85:79 template=EL-6b4d2ccb
+                [SLOT] "Actions" #I2033:1207;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1207;85:81;2033:1221 template=EL-702f05d0
+                    [TEXT] #I2033:1207;85:81;2033:1221;22:25 template=EL-fa274384
+  [FRAME] "D · Powtórzona nazwa · desktop /categories" #2033:447 template=EL-db586efb
+    [FRAME] "Nagłówek aplikacji" #2033:448 template=EL-bbfc7f62
+      [FRAME] "Marka i konto" #2033:449 template=EL-094158a6
+        [TEXT] #2033:450 template=EL-12a1d833
+        [INSTANCE] "Kategorie · aktywne" #2033:458 template=EL-70c1b2ec
+          [TEXT] #I2033:458;21:33 template=EL-8878fbba
+        [TEXT] #2033:451 template=EL-c6e3d824
+        [INSTANCE] "Wyloguj" #2033:452 template=EL-f2a3f421
+          [TEXT] #I2033:452;21:15 template=EL-b6a68ad4
+      [INSTANCE] "Linia nagłówka" #2033:453 template=EL-d08eab0f
+    [FRAME] "Kategorie — treść" #2033:460 template=EL-e525a047
+      [FRAME] "Nagłówek strony" #2033:461 template=EL-bc40306a
+        [TEXT] #2033:462 template=EL-a4b21acf
+        [TEXT] #2033:463 template=EL-b560cc3f
+      [FRAME] "Kategorie i formularz" #2033:464 template=EL-fb9d891a
+        [FRAME] "Lista kategorii" #2033:465 template=EL-37cd6571
+          [FRAME] "Przepływowe · 3" #2033:1240 template=EL-1519dabc
+            [TEXT] #2033:1241 template=EL-e804e9e5
+            [FRAME] "Kategorie — Przepływowe · 3" #2033:1242 template=EL-e9077466
+              [INSTANCE] "Jedzenie na mieście" #2033:1243 template=EL-0334c8d9
+                [FRAME] "Item Content" #I2033:1243;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1243;85:79 template=EL-82e7d3aa
+                [SLOT] "Actions" #I2033:1243;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1243;85:81;2033:1257 template=EL-17fcfe5d
+                    [TEXT] #I2033:1243;85:81;2033:1257;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1258 template=EL-d08eab0f
+              [INSTANCE] "Przyjemności" #2033:1259 template=EL-088c5d6d
+                [FRAME] "Item Content" #I2033:1259;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1259;85:79 template=EL-f16d20e9
+                [SLOT] "Actions" #I2033:1259;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1259;85:81;2033:1273 template=EL-17fcfe5d
+                    [TEXT] #I2033:1259;85:81;2033:1273;22:13 template=EL-89c0edc3
+              [INSTANCE] "Separator" #2033:1274 template=EL-d08eab0f
+              [INSTANCE] "Życie i rachunki" #2033:1275 template=EL-5d38413d
+                [FRAME] "Item Content" #I2033:1275;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1275;85:79 template=EL-10a6da01
+                [SLOT] "Actions" #I2033:1275;85:81 template=EL-452a9c82
+                  [INSTANCE] "Przepływowa" #I2033:1275;85:81;2033:1289 template=EL-17fcfe5d
+                    [TEXT] #I2033:1275;85:81;2033:1289;22:13 template=EL-89c0edc3
+          [FRAME] "Narastające · 3" #2033:1290 template=EL-1519dabc
+            [TEXT] #2033:1291 template=EL-d982ac66
+            [FRAME] "Kategorie — Narastające · 3" #2033:1292 template=EL-e9077466
+              [INSTANCE] "Obligacje rodzinne" #2033:1293 template=EL-cbbd4594
+                [FRAME] "Item Content" #I2033:1293;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1293;85:79 template=EL-4cd5b321
+                [SLOT] "Actions" #I2033:1293;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1293;85:81;2033:1307 template=EL-702f05d0
+                    [TEXT] #I2033:1293;85:81;2033:1307;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1308 template=EL-d08eab0f
+              [INSTANCE] "Opłaty roczne" #2033:1309 template=EL-59cf3a2a
+                [FRAME] "Item Content" #I2033:1309;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1309;85:79 template=EL-7aaa6f61
+                [SLOT] "Actions" #I2033:1309;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1309;85:81;2033:1323 template=EL-702f05d0
+                    [TEXT] #I2033:1309;85:81;2033:1323;22:25 template=EL-fa274384
+              [INSTANCE] "Separator" #2033:1324 template=EL-d08eab0f
+              [INSTANCE] "Wakacje" #2033:1325 template=EL-944ec56f
+                [FRAME] "Item Content" #I2033:1325;85:78 template=EL-f676945a
+                  [TEXT] #I2033:1325;85:79 template=EL-6b4d2ccb
+                [SLOT] "Actions" #I2033:1325;85:81 template=EL-452a9c82
+                  [INSTANCE] "Narastająca" #I2033:1325;85:81;2033:1339 template=EL-702f05d0
+                    [TEXT] #I2033:1325;85:81;2033:1339;22:25 template=EL-fa274384
+        [FRAME] "Nowa kategoria — formularz" #2033:466 template=EL-8a4884b5
+          [INSTANCE] "Nowa kategoria" #2033:740 template=EL-436b16ca
+            [FRAME] "Card Header" #I2033:740;59:26 template=EL-48bf4f19
+              [FRAME] "Heading" #I2033:740;59:27 template=EL-929905f4
+                [TEXT] #I2033:740;59:28 template=EL-b5a69627
+            [FRAME] "Card Content" #I2033:740;59:33 template=EL-277bce55
+              [SLOT] "Content" #I2033:740;59:34 template=EL-74c06011
+                [FRAME] "Pola formularza" #I2033:740;59:34;2033:753 template=EL-ecd9240b
+                  [FRAME] "Nazwa kategorii" #I2033:740;59:34;2033:755 template=EL-bc40306a
+                    [TEXT] #I2033:740;59:34;2033:757 template=EL-66644a19
+                    [INSTANCE] "Nazwa" #I2033:740;59:34;2033:760 layout=layout_e2ff78a1 fills=fill_75800f08 strokes=fill_0a627e32 strokeWeight=1px effects=focus/ring-destructive borderRadius=10px componentId=30:18 componentProperties={"Placeholder":"Email","Value":"Wakacje"}
+                      [TEXT] #I2033:740;59:34;2033:760;30:19 template=EL-b7adcec7
+                    [TEXT] #I2033:740;59:34;2033:763 layout=layout_56d3c81c fills=fill_0a627e32 textStyle="text-sm/normal (6:6)" text="Masz już kategorię o tej nazwie."
+                  [FRAME] "Typ kategorii" #I2033:740;59:34;2033:765 template=EL-1519dabc
+                    [TEXT] #I2033:740;59:34;2033:767 template=EL-311b1e91
+                    [INSTANCE] "Typ — Radio Group" #I2033:740;59:34;2033:1236 template=EL-8b6786e5
+                      [SLOT] "Items" #I2033:740;59:34;2033:1236;28:51 template=EL-896ad5e1
+                        [FRAME] "Przepływowa" #I2033:740;59:34;2033:1236;28:51;2033:769 template=EL-3dc1bba1
+                          [INSTANCE] "Przepływowa" #I2033:740;59:34;2033:1236;28:51;2033:774 template=EL-92138881
+                            [INSTANCE] "Radio Indicator" #I2033:740;59:34;2033:1236;28:51;2033:774;28:23 template=EL-06debdb6
+                            [TEXT] #I2033:740;59:34;2033:1236;28:51;2033:774;28:25 template=EL-113364f5
+                          [FRAME] "Opis typu" #I2033:740;59:34;2033:1236;28:51;2033:776 template=EL-e44866ab
+                            [TEXT] #I2033:740;59:34;2033:1236;28:51;2033:778 template=EL-8a733658
+                        [FRAME] "Narastająca" #I2033:740;59:34;2033:1236;28:51;2033:780 template=EL-3dc1bba1
+                          [INSTANCE] "Narastająca" #I2033:740;59:34;2033:1236;28:51;2033:785 template=EL-bc0cd3fb
+                            [INSTANCE] "Radio Indicator" #I2033:740;59:34;2033:1236;28:51;2033:785;28:35 template=EL-9628c7e9
+                              [ELLIPSE] "Dot" #I2033:740;59:34;2033:1236;28:51;2033:785;28:35;28:13 template=EL-9fdeb2da
+                            [TEXT] #I2033:740;59:34;2033:1236;28:51;2033:785;28:37 template=EL-5e70ffab
+                          [FRAME] "Opis typu" #I2033:740;59:34;2033:1236;28:51;2033:790 template=EL-e44866ab
+                            [TEXT] #I2033:740;59:34;2033:1236;28:51;2033:792 template=EL-9ea25589
+                  [INSTANCE] "Dodaj kategorię" #I2033:740;59:34;2033:795 template=EL-d76617db
+                    [TEXT] #I2033:740;59:34;2033:795;21:7 template=EL-8099671f
