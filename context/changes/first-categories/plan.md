@@ -304,12 +304,12 @@ None. The list is small and loaded once per visit. Creating merges locally witho
 
 #### Automated
 
-- [ ] 1.1 Backend tests pass (incl. new category tests): `cd backend && ./mvnw test`
-- [ ] 1.2 Formatting is clean: `cd backend && ./mvnw spotless:check`
+- [x] 1.1 Backend tests pass (incl. new category tests): `cd backend && ./mvnw test`
+- [x] 1.2 Formatting is clean: `cd backend && ./mvnw spotless:check`
 
 #### Manual
 
-- [ ] 1.3 With the app running against local Postgres, `V3` applies on startup and `\d categories` shows the unique index `categories_owner_name_uk` on `(owner_id, lower(name))`
+- [x] 1.3 With the app running against local Postgres, `V3` applies on startup and `\d categories` shows the unique index `categories_owner_name_uk` on `(owner_id, lower(name))`
 
 ### Phase 2: UI kit — badge, radio-group, item
 

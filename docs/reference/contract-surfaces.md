@@ -53,7 +53,7 @@
 ## owner_id
 
 - **Shape**: column convention for every domain table — `owner_id uuid not null references users(id)`, with an index whose first column is `owner_id`. Every query filters by it; a foreign row answers 404. See the "Every read and write is owner-scoped" rule in `context/foundation/lessons.md`.
-- **Defined in**: convention (first applied in S-02 migrations).
+- **Defined in**: convention; first applied in `backend/src/main/resources/db/migration/V3__categories.sql`.
 - **Consumers**: all owner-scoped repositories (`...ByOwnerId`, `findByIdAndOwnerId`).
 
 ## CurrentUser
@@ -73,3 +73,15 @@
 - **Shape**: test component `com.homebudget.support.TestAccounts` — `create()` / `create(String emailPrefix)` persist an account with a unique e-mail and return its `AccountPrincipal`; static `as(AccountPrincipal)` is a MockMvc `RequestPostProcessor` (= `user(principal)` + a matching `XSRF-TOKEN` cookie / `X-XSRF-TOKEN` header, so GETs and mutating requests both work). Autowire it in any `@SpringBootTest`.
 - **Defined in**: `backend/src/test/java/com/homebudget/support/TestAccounts.java`
 - **Consumers**: cross-account tests of every slice (`AccountIsolationTests` is the template).
+
+## /api/categories
+
+- **Shape**: `GET` → **200** `[{ "id": uuid, "name": string, "kind": "FLOW" | "CUMULATIVE" }]`, the current account's categories only, order unspecified (the client sorts). `POST` (CSRF-protected), JSON `{ "name": string, "kind": "FLOW" | "CUMULATIVE" }`; `name` is stripped of leading/trailing whitespace, then must be non-blank and ≤ 40 characters. **201** `{ "id", "name", "kind" }`. **409** ProblemDetail `detail` "Masz już kategorię o tej nazwie." when the account already has the name in any letter case; **400** ProblemDetail with `errors: { name|kind: message }` (an unknown `kind` value gives 400 without `errors`); **401** when anonymous; **403** without a valid CSRF header.
+- **Defined in**: `backend/src/main/java/com/homebudget/category/CategoryController.java`
+- **Consumers**: Angular `CategoriesService`.
+
+## categories
+
+- **Shape**: table `categories` — `id uuid primary key`, `owner_id uuid not null references users(id)`, `name varchar(40) not null` (stored stripped), `kind varchar(16) not null check (kind in ('FLOW','CUMULATIVE'))`, `created_at timestamptz not null default now()`. Unique index `categories_owner_name_uk` on `(owner_id, lower(name))` (per-account case-insensitive names; also the `owner_id` index). The service maps a violation of this index name to 409.
+- **Defined in**: `backend/src/main/resources/db/migration/V3__categories.sql`, `Category.java`
+- **Consumers**: `CategoryRepository`, `CategoryService` (matches the index name).
