@@ -98,15 +98,15 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
               </div>
               <div hlmField orientation="horizontal">
                 <hlm-radio
-                  value="ACCUMULATING"
-                  inputId="ks-default-accumulating"
-                  aria-describedby="ks-default-accumulating-hint"
+                  value="CUMULATIVE"
+                  inputId="ks-default-cumulative"
+                  aria-describedby="ks-default-cumulative-hint"
                 >
                   <hlm-radio-indicator indicator />
                 </hlm-radio>
                 <div hlmFieldContent>
-                  <label hlmFieldLabel for="ks-default-accumulating">Narastająca</label>
-                  <p hlmFieldDescription id="ks-default-accumulating-hint">
+                  <label hlmFieldLabel for="ks-default-cumulative">Narastająca</label>
+                  <p hlmFieldDescription id="ks-default-cumulative-hint">
                     Zbiera się z miesiąca na miesiąc, aż ją wydasz.
                   </p>
                 </div>
@@ -163,10 +163,10 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
               <label hlmFieldLabel for="ks-focus-flow">Przepływowa</label>
             </div>
             <div hlmField orientation="horizontal">
-              <hlm-radio value="ACCUMULATING" inputId="ks-focus-accumulating">
+              <hlm-radio value="CUMULATIVE" inputId="ks-focus-cumulative">
                 <hlm-radio-indicator indicator />
               </hlm-radio>
-              <label hlmFieldLabel for="ks-focus-accumulating">Narastająca</label>
+              <label hlmFieldLabel for="ks-focus-cumulative">Narastająca</label>
             </div>
           </hlm-radio-group>
         </fieldset>
@@ -190,10 +190,10 @@ import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
                 <label hlmFieldLabel for="ks-disabled-flow">Przepływowa</label>
               </div>
               <div hlmField orientation="horizontal">
-                <hlm-radio value="ACCUMULATING" inputId="ks-disabled-accumulating" disabled>
+                <hlm-radio value="CUMULATIVE" inputId="ks-disabled-cumulative" disabled>
                   <hlm-radio-indicator indicator />
                 </hlm-radio>
-                <label hlmFieldLabel for="ks-disabled-accumulating">Narastająca</label>
+                <label hlmFieldLabel for="ks-disabled-cumulative">Narastająca</label>
               </div>
             </hlm-radio-group>
           </fieldset>

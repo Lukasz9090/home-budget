@@ -201,6 +201,7 @@ describe('Categories', () => {
       expect(nameError()).toBe('Masz już kategorię o tej nazwie.');
     });
     expect(query('[hlmAlert]')).toBeNull();
+    expect(document.activeElement).toBe(query('#category-name'));
 
     type('Wakacje 2');
     await fixture.whenStable();
