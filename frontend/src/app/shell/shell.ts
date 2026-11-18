@@ -1,14 +1,17 @@
 import { Component, inject, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { HlmButtonImports } from '@spartan-ng/helm/button';
 import { HlmSeparatorImports } from '@spartan-ng/helm/separator';
 
 import { AuthService } from '../auth/auth.service';
 
-/** Logged-in layout: header with the account e-mail and logout, child routes below. */
+/**
+ * Logged-in layout: header with the navigation (desktop), the account e-mail and logout; child
+ * routes below; on mobile the navigation moves to an app footer at the bottom of the viewport.
+ */
 @Component({
   selector: 'app-shell',
-  imports: [RouterOutlet, HlmButtonImports, HlmSeparatorImports],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, HlmButtonImports, HlmSeparatorImports],
   templateUrl: './shell.html',
   host: { class: 'flex min-h-dvh flex-col' },
 })

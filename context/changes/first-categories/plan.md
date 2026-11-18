@@ -279,6 +279,14 @@ The `/categories` screen per frames A–D (desktop + mobile), its states without
 5. Stop the backend and submit, and see the destructive Alert in the form card.
 6. Check mobile at 390px: form above the content, nav in the footer.
 
+## Implementation Deviations
+
+Agreed during Phase 3 (2026-11-18); the Phase blocks above keep the original wording.
+
+- **Kind kept after a create:** the form clears only `name` (`reset({ name: '', kind })`) and keeps the chosen kind, because categories are usually added in runs of one kind. Replaces "form reset to `{ name: '', kind: 'FLOW' }`" / "type back to Przepływowa". Not persisted across reloads.
+- **Errors only after submit:** the screen provides its own `ErrorStateMatcher` (shows errors once "Dodaj kategorię" was clicked, reset after a successful create) instead of spartan's touched-based default. With the default, clicking a radio blurred Nazwa, its error appeared above the radios and the layout shift swallowed the click.
+- **Active nav class is `bg-accent!`:** `routerLinkActive` adds the class without tailwind-merge, so a plain `bg-accent` competes with the outline variant's `bg-background`; the important modifier makes the active background win.
+
 ## Performance Considerations
 
 None. The list is small and loaded once per visit. Creating merges locally without a refetch.
@@ -315,28 +323,28 @@ None. The list is small and loaded once per visit. Creating merges locally witho
 
 #### Automated
 
-- [x] 2.1 Build passes: `cd frontend && npm run build`
-- [x] 2.2 Tests pass: `cd frontend && npm test -- --watch=false`
-- [x] 2.3 Lint passes: `cd frontend && npm run lint`
-- [x] 2.4 UI literal guard passes: `cd frontend && npm run lint:ui`
+- [x] 2.1 Build passes: `cd frontend && npm run build` — 606a994
+- [x] 2.2 Tests pass: `cd frontend && npm test -- --watch=false` — 606a994
+- [x] 2.3 Lint passes: `cd frontend && npm run lint` — 606a994
+- [x] 2.4 UI literal guard passes: `cd frontend && npm run lint:ui` — 606a994
 
 #### Manual
 
-- [x] 2.5 `/dev/kitchen-sink` (via `ng serve`) shows Badge, Radio Group and Item in light and dark preview, and the radio group is keyboard-operable (arrows switch, focus ring visible)
+- [x] 2.5 `/dev/kitchen-sink` (via `ng serve`) shows Badge, Radio Group and Item in light and dark preview, and the radio group is keyboard-operable (arrows switch, focus ring visible) — 606a994
 
 ### Phase 3: Kategorie screen and shell navigation
 
 #### Automated
 
-- [ ] 3.1 Build passes: `cd frontend && npm run build`
-- [ ] 3.2 Tests pass (service, screen: empty/list/grouping+pl sort/409 field error/400/required/trim+40/reset+focus after success/load error; shell: active link + aria-current): `cd frontend && npm test -- --watch=false`
-- [ ] 3.3 Lint passes: `cd frontend && npm run lint`
-- [ ] 3.4 UI literal guard passes: `cd frontend && npm run lint:ui`
-- [ ] 3.5 Backend still green: `cd backend && ./mvnw test`
+- [x] 3.1 Build passes: `cd frontend && npm run build`
+- [x] 3.2 Tests pass (service, screen: empty/list/grouping+pl sort/409 field error/400/required/trim+40/reset+focus after success/load error; shell: active link + aria-current): `cd frontend && npm test -- --watch=false`
+- [x] 3.3 Lint passes: `cd frontend && npm run lint`
+- [x] 3.4 UI literal guard passes: `cd frontend && npm run lint:ui`
+- [x] 3.5 Backend still green: `cd backend && ./mvnw test`
 
 #### Manual
 
-- [ ] 3.6 Screenshots for frames A, B, C, D and home (desktop + mobile where drawn) saved in `context/changes/first-categories/screenshots/` and match the frames (spacing, variants, copy), except the agreed outline nav variant
-- [ ] 3.7 End-to-end on `ng serve` + backend: new account → Kategorie → empty state → add "Wakacje" (Narastająca) → list appears, form resets, focus on Nazwa → add "wakacje" → field error
-- [ ] 3.8 Second account in another browser sees an empty state, and can add "Wakacje"
-- [ ] 3.9 Keyboard only (desktop): tab order Kategorie → Wyloguj → Nazwa → radio group (arrows) → Dodaj kategorię, focus ring visible everywhere
+- [x] 3.6 Screenshots for frames A, B, C, D and home (desktop + mobile where drawn) saved in `context/changes/first-categories/screenshots/` and match the frames (spacing, variants, copy), except the agreed outline nav variant
+- [x] 3.7 End-to-end on `ng serve` + backend: new account → Kategorie → empty state → add "Wakacje" (Narastająca) → list appears, form resets, focus on Nazwa → add "wakacje" → field error
+- [x] 3.8 Second account in another browser sees an empty state, and can add "Wakacje"
+- [x] 3.9 Keyboard only (desktop): tab order Kategorie → Wyloguj → Nazwa → radio group (arrows) → Dodaj kategorię, focus ring visible everywhere

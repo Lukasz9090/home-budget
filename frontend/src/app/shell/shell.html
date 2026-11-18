@@ -1,6 +1,17 @@
 <header class="bg-background">
   <div class="mx-auto flex w-full max-w-7xl items-center gap-3 px-4 py-4 md:gap-6 md:px-10">
     <span class="text-base font-semibold md:text-xl">PennyPlan</span>
+    <nav class="hidden md:flex" aria-label="Nawigacja">
+      <a
+        hlmBtn
+        variant="outline"
+        routerLink="/categories"
+        routerLinkActive="bg-accent!"
+        ariaCurrentWhenActive="page"
+      >
+        Kategorie
+      </a>
+    </nav>
     <span class="min-w-0 flex-1 truncate text-right text-sm text-muted-foreground">
       {{ user()?.email }}
     </span>
@@ -14,3 +25,19 @@
 <main class="mx-auto w-full max-w-7xl flex-1 px-4 pt-8 md:px-10 md:pt-10">
   <router-outlet />
 </main>
+
+<!-- Mobile navigation: bottom of the viewport via the host's min-h-dvh flex column, not fixed. -->
+<footer class="md:hidden">
+  <hlm-separator />
+  <nav class="flex items-center gap-3 p-4" aria-label="Nawigacja">
+    <a
+      hlmBtn
+      variant="outline"
+      routerLink="/categories"
+      routerLinkActive="bg-accent!"
+      ariaCurrentWhenActive="page"
+    >
+      Kategorie
+    </a>
+  </nav>
+</footer>
