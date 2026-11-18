@@ -9,7 +9,8 @@ import { HlmInputImports } from '@spartan-ng/helm/input';
 import { HlmLabelImports } from '@spartan-ng/helm/label';
 import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
 
-import { authErrorMessage, safeReturnUrl } from '../auth-helpers';
+import { apiErrorMessage } from '../../shared/api-error';
+import { safeReturnUrl } from '../auth-helpers';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -54,7 +55,7 @@ export class Login {
         safeReturnUrl(this.route.snapshot.queryParamMap.get('returnUrl')),
       );
     } catch (error) {
-      this.error.set(authErrorMessage(error, { 401: 'Nieprawidłowy e-mail lub hasło.' }));
+      this.error.set(apiErrorMessage(error, { 401: 'Nieprawidłowy e-mail lub hasło.' }));
     } finally {
       this.pending.set(false);
     }

@@ -28,7 +28,7 @@ import { HlmRadioGroupImports } from '@spartan-ng/helm/radio-group';
 import { HlmSeparatorImports } from '@spartan-ng/helm/separator';
 import { HlmSpinnerImports } from '@spartan-ng/helm/spinner';
 
-import { authErrorMessage } from '../auth/auth-helpers';
+import { apiErrorMessage } from '../shared/api-error';
 import { Category, CategoriesService, CategoryKind } from './categories.service';
 
 /** Mirrors the backend's name limit, counted on the trimmed value. */
@@ -137,17 +137,18 @@ export class Categories {
       // Keeps the chosen kind: categories are usually added in runs of one kind.
       this.form.reset({ name: '', kind });
       this.errorState.submitted.set(false);
-      this.nameInput().nativeElement.focus();
     } catch (error) {
       if (error instanceof HttpErrorResponse && error.status === 409) {
         // Cleared by the next edit: the validators re-run on every value change.
         this.form.controls.name.setErrors({ taken: true });
         this.form.controls.name.markAsTouched();
       } else {
-        this.error.set(authErrorMessage(error, {}));
+        this.error.set(apiErrorMessage(error, {}));
       }
     } finally {
       this.pending.set(false);
+      // The disabled button lost focus while saving; return it to the field in every outcome.
+      this.nameInput().nativeElement.focus();
     }
   }
 
