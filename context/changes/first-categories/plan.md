@@ -336,15 +336,15 @@ None. The list is small and loaded once per visit. Creating merges locally witho
 
 #### Automated
 
-- [x] 3.1 Build passes: `cd frontend && npm run build`
-- [x] 3.2 Tests pass (service, screen: empty/list/grouping+pl sort/409 field error/400/required/trim+40/reset+focus after success/load error; shell: active link + aria-current): `cd frontend && npm test -- --watch=false`
-- [x] 3.3 Lint passes: `cd frontend && npm run lint`
-- [x] 3.4 UI literal guard passes: `cd frontend && npm run lint:ui`
-- [x] 3.5 Backend still green: `cd backend && ./mvnw test`
+- [x] 3.1 Build passes: `cd frontend && npm run build` — 39aa467
+- [x] 3.2 Tests pass (service, screen: empty/list/grouping+pl sort/409 field error/400/required/trim+40/reset+focus after success/load error; shell: active link + aria-current): `cd frontend && npm test -- --watch=false` — 39aa467
+- [x] 3.3 Lint passes: `cd frontend && npm run lint` — 39aa467
+- [x] 3.4 UI literal guard passes: `cd frontend && npm run lint:ui` — 39aa467
+- [x] 3.5 Backend still green: `cd backend && ./mvnw test` — 39aa467
 
 #### Manual
 
-- [x] 3.6 Screenshots for frames A, B, C, D and home (desktop + mobile where drawn) saved in `context/changes/first-categories/screenshots/` and match the frames (spacing, variants, copy), except the agreed outline nav variant
-- [x] 3.7 End-to-end on `ng serve` + backend: new account → Kategorie → empty state → add "Wakacje" (Narastająca) → list appears, form resets, focus on Nazwa → add "wakacje" → field error
-- [x] 3.8 Second account in another browser sees an empty state, and can add "Wakacje"
-- [x] 3.9 Keyboard only (desktop): tab order Kategorie → Wyloguj → Nazwa → radio group (arrows) → Dodaj kategorię, focus ring visible everywhere
+- [x] 3.6 Screenshots for frames A, B, C, D and home (desktop + mobile where drawn) saved in `context/changes/first-categories/screenshots/` and match the frames (spacing, variants, copy), except the agreed outline nav variant — 39aa467
+- [x] 3.7 End-to-end on `ng serve` + backend: new account → Kategorie → empty state → add "Wakacje" (Narastająca) → list appears, form resets, focus on Nazwa → add "wakacje" → field error — 39aa467
+- [x] 3.8 Second account in another browser sees an empty state, and can add "Wakacje" — 39aa467
+- [x] 3.9 Keyboard only (desktop): tab order Kategorie → Wyloguj → Nazwa → radio group (arrows) → Dodaj kategorię, focus ring visible everywhere — 39aa467
