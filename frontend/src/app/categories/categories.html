@@ -1,0 +1,186 @@
+<header class="flex flex-col gap-2">
+  <h1 class="text-2xl font-semibold md:text-3xl">Kategorie</h1>
+  <p class="text-base text-muted-foreground">
+    Kategorie to koperty, na które dzielisz każdy dochód.
+  </p>
+</header>
+
+<!-- Form first in the DOM (mobile order); on desktop it moves to the fixed right column. -->
+<div class="flex flex-col gap-6 md:flex-row-reverse md:items-start md:gap-8">
+  <section hlmCard class="md:w-95 md:shrink-0" aria-labelledby="category-form-title">
+    <div hlmCardHeader>
+      <h2 hlmCardTitle id="category-form-title">Nowa kategoria</h2>
+    </div>
+    <div hlmCardContent>
+      <form class="flex flex-col gap-6" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        @if (error(); as message) {
+          <div hlmAlert variant="destructive">
+            <p hlmAlertDescription>{{ message }}</p>
+          </div>
+        }
+
+        <div hlmField>
+          <label hlmLabel for="category-name">Nazwa</label>
+          <input
+            #nameInput
+            hlmInput
+            id="category-name"
+            type="text"
+            formControlName="name"
+            autocomplete="off"
+          />
+          <hlm-field-error id="category-name-error">
+            @if (form.controls.name.hasError('required')) {
+              Podaj nazwę kategorii.
+            } @else if (form.controls.name.hasError('maxlength')) {
+              Nazwa może mieć najwyżej 40 znaków.
+            } @else if (form.controls.name.hasError('taken')) {
+              Masz już kategorię o tej nazwie.
+            }
+          </hlm-field-error>
+        </div>
+
+        <fieldset hlmFieldSet>
+          <legend hlmFieldLegend variant="label">Typ</legend>
+          <hlm-radio-group formControlName="kind">
+            <div hlmField orientation="horizontal">
+              <hlm-radio
+                value="FLOW"
+                inputId="category-kind-flow"
+                aria-describedby="category-kind-flow-hint"
+              >
+                <hlm-radio-indicator indicator />
+              </hlm-radio>
+              <div hlmFieldContent>
+                <label hlmFieldLabel for="category-kind-flow">Przepływowa</label>
+                <p hlmFieldDescription id="category-kind-flow-hint">
+                  Na bieżący miesiąc. Co niewydane, nie przechodzi dalej.
+                </p>
+              </div>
+            </div>
+            <div hlmField orientation="horizontal">
+              <hlm-radio
+                value="CUMULATIVE"
+                inputId="category-kind-cumulative"
+                aria-describedby="category-kind-cumulative-hint"
+              >
+                <hlm-radio-indicator indicator />
+              </hlm-radio>
+              <div hlmFieldContent>
+                <label hlmFieldLabel for="category-kind-cumulative">Narastająca</label>
+                <p hlmFieldDescription id="category-kind-cumulative-hint">
+                  Zbiera się z miesiąca na miesiąc, aż ją wydasz.
+                </p>
+              </div>
+            </div>
+          </hlm-radio-group>
+        </fieldset>
+
+        <button hlmBtn type="submit" class="w-full" [disabled]="pending()">
+          @if (pending()) {
+            <hlm-spinner aria-hidden="true" />
+          }
+          {{ pending() ? 'Dodawanie…' : 'Dodaj kategorię' }}
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <div class="flex min-w-0 flex-1 flex-col gap-6">
+    @switch (loadState()) {
+      @case ('loading') {
+        <hlm-spinner aria-label="Wczytywanie kategorii" />
+      }
+      @case ('error') {
+        <div hlmAlert variant="destructive">
+          <p hlmAlertDescription>Nie udało się wczytać kategorii. Odśwież stronę.</p>
+        </div>
+      }
+      @default {
+        @if (empty()) {
+          <section hlmCard aria-labelledby="categories-empty-title">
+            <div hlmCardHeader>
+              <h2 hlmCardTitle id="categories-empty-title">Nie masz jeszcze żadnej kategorii</h2>
+              <p hlmCardDescription>
+                Kategoria to koperta na część dochodu. Ustalasz, jaki procent wpływu do niej trafia
+                – bez zapisywania paragonów.
+              </p>
+            </div>
+            <div hlmCardContent class="flex flex-col gap-6">
+              <div class="flex flex-col gap-6 md:flex-row">
+                <div class="flex flex-1 flex-col gap-3">
+                  <span hlmBadge variant="secondary">Przepływowa</span>
+                  <ul class="flex flex-col gap-2 text-sm text-foreground">
+                    <li>Życie i rachunki</li>
+                    <li>Jedzenie na mieście</li>
+                    <li>Przyjemności</li>
+                  </ul>
+                </div>
+                <div class="flex flex-1 flex-col gap-3">
+                  <span hlmBadge variant="outline">Narastająca</span>
+                  <ul class="flex flex-col gap-2 text-sm text-foreground">
+                    <li>Wakacje</li>
+                    <li>Opłaty roczne</li>
+                    <li>Oszczędności</li>
+                  </ul>
+                </div>
+              </div>
+              <p class="text-sm text-muted-foreground">
+                To tylko przykłady – nic nie tworzymy za Ciebie.
+              </p>
+            </div>
+          </section>
+        } @else {
+          @if (flow().length > 0) {
+            <section class="flex flex-col gap-3" aria-labelledby="categories-flow-title">
+              <h2 id="categories-flow-title" class="text-sm font-semibold">
+                Przepływowe · {{ flow().length }}
+              </h2>
+              <ul class="flex flex-col">
+                @for (category of flow(); track category.id) {
+                  <li class="flex flex-col">
+                    @if (!$first) {
+                      <hlm-separator />
+                    }
+                    <div hlmItem size="xs" class="h-11">
+                      <div hlmItemContent>
+                        <span hlmItemTitle>{{ category.name }}</span>
+                      </div>
+                      <div hlmItemActions>
+                        <span hlmBadge variant="secondary">{{ kindLabel(category.kind) }}</span>
+                      </div>
+                    </div>
+                  </li>
+                }
+              </ul>
+            </section>
+          }
+          @if (cumulative().length > 0) {
+            <section class="flex flex-col gap-3" aria-labelledby="categories-cumulative-title">
+              <h2 id="categories-cumulative-title" class="text-sm font-semibold">
+                Narastające · {{ cumulative().length }}
+              </h2>
+              <ul class="flex flex-col">
+                @for (category of cumulative(); track category.id) {
+                  <li class="flex flex-col">
+                    @if (!$first) {
+                      <hlm-separator />
+                    }
+                    <div hlmItem size="xs" class="h-11">
+                      <div hlmItemContent>
+                        <span hlmItemTitle>{{ category.name }}</span>
+                      </div>
+                      <div hlmItemActions>
+                        <span hlmBadge variant="outline">{{ kindLabel(category.kind) }}</span>
+                      </div>
+                    </div>
+                  </li>
+                }
+              </ul>
+            </section>
+          }
+        }
+      }
+    }
+  </div>
+</div>

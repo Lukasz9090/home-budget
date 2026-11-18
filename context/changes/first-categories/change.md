@@ -3,7 +3,7 @@ change_id: first-categories
 title: Własne kategorie przepływowe i narastające z pustym stanem
 status: implementing
 created: 2026-11-17
-updated: 2026-11-17
+updated: 2026-11-18
 archived_at: null
 ---
 

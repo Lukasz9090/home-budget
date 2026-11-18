@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-/** Placeholder start page; S-02 replaces it with the category empty state. */
+/** Placeholder start page; the budget view replaces it later (categories live at /categories). */
 @Component({
   selector: 'app-home',
   host: { class: 'block' },
